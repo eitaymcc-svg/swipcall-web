@@ -10,59 +10,348 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',system-ui,sans-serif;background:#1C1C1E;color:#D4D4D8;line-height:1.8;padding:48px;-webkit-font-smoothing:antialiased}
-        .wrap{max-width:720px;margin:0 auto}
+        html,body{overflow-x:hidden}
+        body{font-family:'Inter',system-ui,sans-serif;background:#1C1C1E;color:#D4D4D8;line-height:1.8;padding:24px;-webkit-font-smoothing:antialiased}
+        @media(min-width:600px){body{padding:48px}}
+        .wrap{max-width:720px;margin:0 auto;overflow-x:hidden;word-break:break-word}
         h1{font-size:28px;font-weight:700;color:#fff;margin-bottom:8px}
         .date{font-size:13px;color:#A3A3A9;margin-bottom:48px}
         h2{font-size:20px;font-weight:700;color:#fff;margin:40px 0 12px}
+        h3{font-size:17px;font-weight:700;color:#E4E4E8;margin:24px 0 8px}
         p{margin-bottom:16px;font-size:16px}
+        ul{margin:0 0 16px 24px;font-size:16px}
+        li{margin-bottom:8px}
         a{color:#FF6B35}
-        .back{display:inline-block;margin-bottom:32px;color:#A3A3A9;text-decoration:none;font-size:14px}
-        .back:hover{color:#fff}
+        .back{display:inline-block;margin-bottom:32px;background:#FF6B35;color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;box-shadow:0 2px 8px rgba(255,107,53,0.3)}
+        .back:hover{background:#FF8A5C}
+        table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:15px;display:block;overflow-x:auto}
+        th,td{text-align:left;padding:10px 12px;border:1px solid #3A3A3E}
+        th{background:#2A2A2E;color:#fff;font-weight:700}
+        td{vertical-align:top}
     </style>
 </head>
 <body>
     <div class="wrap">
-        <a href="/" class="back">← Back to Swipcall</a>
+        <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Privacy Policy</h1>
-        <p class="date">Last updated: April 2, 2026</p>
+        <p class="date">Last updated: April 3, 2026</p>
 
-        <h2>Summary</h2>
-        <p>Swipcall stores all your data locally on your phone. We do not collect, transmit, or have access to your personal data, customer data, call logs, or contacts.</p>
+        <h2>1. Introduction</h2>
+        <p>This privacy policy explains how Swipcall collects, uses, and protects information when you use the Swipcall Android application and this website. Swipcall is a local-first customer management app built for tradespeople such as plumbers, electricians, and locksmiths. We designed Swipcall so that your personal and business data stays on your device. This policy is written in plain language so you can understand exactly what happens with your data.</p>
+        <p>This policy describes how we process your data when you use Swipcall, and the legal bases we rely on for each processing activity, as detailed in Section 4 below.</p>
 
-        <h2>What data Swipcall uses</h2>
-        <p>Swipcall accesses phone call state and call log to detect incoming and outgoing calls and display the popup overlay. It accesses your contacts to show caller information. This data is processed entirely on your device and is never sent to any server.</p>
+        <h2>2. Data controller</h2>
+        <p>The data controller responsible for your data is:</p>
+        <p>
+            <strong>Swipcall</strong><br>
+            Operated by Cadvix, an unregistered partnership based in Israel<br>
+            Email: <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>
+        </p>
+        <p>Given the nature and scale of our processing activities, we are not required to appoint a Data Protection Officer under Article 37 of the GDPR. For all privacy-related matters, contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>.</p>
+        <p>For all privacy-related requests, including exercising your rights under the GDPR, please contact us at the email above. We aim to respond within 30 days.</p>
 
-        <h2>Data storage</h2>
-        <p>All customer records, appointments, call history, and settings are stored in a local database on your Android device. No data is stored on external servers.</p>
+        <h2>3. Categories of personal data we process</h2>
+        <p>Swipcall is a local-first app. The vast majority of data never leaves your device. Below is a complete list of data categories, where they are processed, and who can access them.</p>
 
-        <h2>Backups</h2>
-        <p>If you choose to enable backup, your data is encrypted using AES-256-GCM and uploaded to your personal Google Drive account. Only you can access this backup. Swipcall does not have access to your Google Drive or the encryption key.</p>
+        <h3>3.1 Data stored only on your device (never sent to us)</h3>
+        <ul>
+            <li><strong>Customer records</strong> - names, phone numbers, addresses, notes, and any other details you enter.</li>
+            <li><strong>Call history</strong> - incoming and outgoing call metadata (phone number, time, duration) read from your Android call log.</li>
+            <li><strong>Contact data</strong> - names and phone numbers read from your device contacts to match callers.</li>
+            <li><strong>Appointments and reminders</strong> - scheduling data you create within the app.</li>
+            <li><strong>App settings and preferences</strong> - your configuration choices.</li>
+        </ul>
+        <p>This data is stored in a local SQLite database on your Android device. Swipcall has no server that receives this data. We cannot access, read, or recover it.</p>
 
-        <h2>Third-party services</h2>
-        <p>Swipcall uses Firebase for crash reporting and basic anonymous analytics (app opens, feature usage counts). No personally identifiable information is included in these reports. No customer data, phone numbers, or call details are ever transmitted.</p>
+        <h3>3.2 Data processed by third-party services</h3>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Service</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Email address, display name</td>
+                <td>Google Sign-In</td>
+                <td>Authentication (creating and signing into your account)</td>
+            </tr>
+            <tr>
+                <td>Anonymous crash reports (stack traces, device model, OS version - no personal data)</td>
+                <td>Firebase Crashlytics (Google)</td>
+                <td>Identifying and fixing bugs</td>
+            </tr>
+            <tr>
+                <td>Anonymous usage events (feature tap counts, screen views - no personal data)</td>
+                <td>Firebase Analytics (Google)</td>
+                <td>Understanding which features are used so we can improve the app</td>
+            </tr>
+            <tr>
+                <td>Anonymous user ID, purchase receipts</td>
+                <td>RevenueCat</td>
+                <td>Managing subscriptions and verifying purchases</td>
+            </tr>
+        </table>
 
-        <h2>WhatsApp integration</h2>
-        <p>When you tap "Send WhatsApp" in the popup, Swipcall opens the WhatsApp app with the customer's phone number using a standard Android deep link. No data passes through Swipcall's servers - it goes directly from your device to WhatsApp.</p>
+        <h3>3.3 Data processed only when you choose to use a Pro feature</h3>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Service</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Encrypted backup file (AES-256-GCM encrypted copy of your local database)</td>
+                <td>Google Drive (your personal account)</td>
+                <td>Backup and restore, initiated by you</td>
+            </tr>
+            <tr>
+                <td>Appointment details you choose to sync</td>
+                <td>Google Calendar (your personal account)</td>
+                <td>Two-way calendar sync, initiated by you</td>
+            </tr>
+        </table>
 
-        <h2>Permissions</h2>
-        <p>Swipcall requests the following Android permissions:</p>
-        <p><strong>READ_PHONE_STATE / READ_CALL_LOG:</strong> To detect when calls start and end, and to show caller information in the popup.</p>
-        <p><strong>SYSTEM_ALERT_WINDOW:</strong> To display the floating popup overlay on top of other apps.</p>
-        <p><strong>READ_CONTACTS:</strong> To match phone numbers with contact names.</p>
-        <p><strong>POST_NOTIFICATIONS:</strong> To send callback reminders.</p>
+        <h2>4. Purposes and legal basis for processing</h2>
+        <p>Under Article 6 of the GDPR, every type of data processing must have a legal basis. Here is the legal basis for each processing activity in Swipcall:</p>
 
-        <h2>Data export and deletion</h2>
-        <p>You can export all your data at any time from Settings. You can delete all data by uninstalling the app or using the "Delete all data" option in Settings. Deletion is permanent and irreversible.</p>
+        <table>
+            <tr>
+                <th>Processing activity</th>
+                <th>Legal basis (Art. 6 GDPR)</th>
+                <th>Explanation</th>
+            </tr>
+            <tr>
+                <td>On-device processing of call logs, contacts, and customer records</td>
+                <td>Art. 6(1)(b) - Performance of a contract</td>
+                <td>This processing is necessary to provide the core service you downloaded the app to use (caller identification and customer management).</td>
+            </tr>
+            <tr>
+                <td>Google Sign-In (email, name)</td>
+                <td>Art. 6(1)(b) - Performance of a contract</td>
+                <td>Authentication is necessary to provide the service and manage your account.</td>
+            </tr>
+            <tr>
+                <td>Firebase Crashlytics (anonymous crash reports)</td>
+                <td>Art. 6(1)(f) - Legitimate interest</td>
+                <td>Our legitimate interest is maintaining app stability and fixing bugs. The data is anonymous and the impact on your privacy is minimal.</td>
+            </tr>
+            <tr>
+                <td>Firebase Analytics (anonymous usage counts)</td>
+                <td>Art. 6(1)(a) - Consent</td>
+                <td>Firebase Analytics is only initialized after you opt in within the app settings. You can withdraw consent at any time by disabling analytics in the app settings.</td>
+            </tr>
+            <tr>
+                <td>RevenueCat (subscription management)</td>
+                <td>Art. 6(1)(b) - Performance of a contract</td>
+                <td>Necessary to process and verify your subscription purchase.</td>
+            </tr>
+            <tr>
+                <td>Google Drive backup (encrypted)</td>
+                <td>Art. 6(1)(a) - Consent</td>
+                <td>You choose to enable this feature. You can stop at any time.</td>
+            </tr>
+            <tr>
+                <td>Google Calendar sync</td>
+                <td>Art. 6(1)(a) - Consent</td>
+                <td>You choose to enable this feature. You can disconnect at any time.</td>
+            </tr>
+        </table>
 
-        <h2>Children's privacy</h2>
-        <p>Swipcall is not intended for use by anyone under the age of 16.</p>
+        <h2>5. Android permissions</h2>
+        <p>Swipcall requests the following Android permissions. Each is required for a specific feature:</p>
+        <ul>
+            <li><strong>READ_PHONE_STATE / READ_CALL_LOG</strong> - To detect when calls start and end and to show caller information in the popup overlay. This data is processed entirely on your device.</li>
+            <li><strong>SYSTEM_ALERT_WINDOW</strong> - To display the floating popup overlay on top of other apps during calls.</li>
+            <li><strong>READ_CONTACTS</strong> - To match incoming phone numbers with contact names stored on your device. Contact data is read locally and never transmitted.</li>
+            <li><strong>POST_NOTIFICATIONS</strong> - To send you callback reminders and service notifications.</li>
+        </ul>
+        <p>You can revoke any permission at any time through your Android device settings. Revoking a permission will disable the feature that depends on it, but the rest of the app will continue to work.</p>
 
-        <h2>Changes to this policy</h2>
-        <p>We may update this privacy policy. Changes will be posted on this page with an updated date.</p>
+        <h2>6. Third-party data processors</h2>
+        <p>The following third parties process data on our behalf or as part of the services you use through Swipcall:</p>
 
-        <h2>Contact</h2>
-        <p>Questions about this policy? Email <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a></p>
+        <table>
+            <tr>
+                <th>Processor</th>
+                <th>Role</th>
+                <th>Data processed</th>
+                <th>Privacy policy</th>
+            </tr>
+            <tr>
+                <td>Google LLC (Firebase Crashlytics)</td>
+                <td>Sub-processor</td>
+                <td>Anonymous crash data</td>
+                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>Google LLC (Firebase Analytics)</td>
+                <td>Sub-processor</td>
+                <td>Anonymous usage events</td>
+                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>Google LLC (Sign-In, Drive, Calendar)</td>
+                <td>Independent controller / processor</td>
+                <td>Email, name, backup files, calendar events</td>
+                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>RevenueCat Inc.</td>
+                <td>Sub-processor</td>
+                <td>Anonymous user ID, purchase receipts</td>
+                <td><a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>Google LLC (Google Play)</td>
+                <td>Processor</td>
+                <td>Payment and subscription data</td>
+                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+        </table>
+
+        <p>We do not sell, rent, or share your personal data with any other third parties. We do not use advertising networks or tracking services.</p>
+
+        <h2>7. International data transfers</h2>
+        <p>Swipcall is operated from Israel, which has an <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en" target="_blank" rel="noopener">adequacy decision</a> from the European Commission, meaning the Commission recognizes Israel as providing an adequate level of data protection.</p>
+        <p>Some third-party processors listed above (Google LLC and RevenueCat Inc.) are based in the United States. Data transferred to these US-based processors is protected by the following safeguards:</p>
+        <ul>
+            <li><strong>EU-US Data Privacy Framework</strong> - Both Google and RevenueCat are certified under the EU-US Data Privacy Framework, which the European Commission has recognized as providing adequate protection for transfers to certified US organizations.</li>
+            <li><strong>Standard Contractual Clauses (SCCs)</strong> - Google and RevenueCat also incorporate the European Commission's Standard Contractual Clauses into their data processing agreements as a supplementary safeguard.</li>
+            <li><strong>Minimal data exposure</strong> - The data sent to these services is either anonymous (crash reports, analytics events) or limited to what is strictly necessary (email for authentication, anonymous IDs for subscriptions).</li>
+        </ul>
+
+        <h2>8. Data retention</h2>
+        <p>We apply the following retention periods:</p>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Retention period</th>
+                <th>How to delete</th>
+            </tr>
+            <tr>
+                <td>On-device data (customers, calls, appointments, settings)</td>
+                <td>Kept until you delete it or uninstall the app</td>
+                <td>Use "Delete all data" in Settings, or uninstall the app</td>
+            </tr>
+            <tr>
+                <td>Google Drive backups</td>
+                <td>Kept in your personal Google Drive until you delete them</td>
+                <td>Delete the backup files from your Google Drive, or disconnect backup in the app</td>
+            </tr>
+            <tr>
+                <td>Google Sign-In data (email, name)</td>
+                <td>Stored locally on your device; kept by Google as part of your Google account</td>
+                <td>Local copy is deleted when you uninstall the app or use "Delete all data" in Settings. To remove from Google, revoke Swipcall's access in your Google account security settings</td>
+            </tr>
+            <tr>
+                <td>Firebase Crashlytics data</td>
+                <td>90 days (Google's default retention)</td>
+                <td>Automatically deleted by Google after the retention period</td>
+            </tr>
+            <tr>
+                <td>Firebase Analytics data</td>
+                <td>14 months (Google's default retention)</td>
+                <td>Automatically deleted by Google after the retention period</td>
+            </tr>
+            <tr>
+                <td>RevenueCat subscription data</td>
+                <td>Subscription duration plus up to 7 years as required by Israeli tax law</td>
+                <td>Contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> to request deletion after subscription ends and the tax retention period has elapsed</td>
+            </tr>
+        </table>
+
+        <h2>9. Your rights under the GDPR</h2>
+        <p>If you are in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have the following rights regarding your personal data:</p>
+        <ul>
+            <li><strong>Right of access (Art. 15)</strong> - You can request a copy of all personal data we hold about you.</li>
+            <li><strong>Right to rectification (Art. 16)</strong> - You can ask us to correct any inaccurate data we hold about you.</li>
+            <li><strong>Right to erasure (Art. 17)</strong> - You can ask us to delete your personal data. Since most data is on your device, you can delete it directly. For data held by third-party processors, contact us and we will coordinate deletion.</li>
+            <li><strong>Right to restriction of processing (Art. 18)</strong> - You can ask us to temporarily stop processing your data while a concern is resolved.</li>
+            <li><strong>Right to data portability (Art. 20)</strong> - You can request your data in a structured, commonly used, machine-readable format. The app's built-in export feature in Settings provides this.</li>
+            <li><strong>Right to object (Art. 21)</strong> - You can object to processing based on legitimate interest (Firebase Crashlytics and Analytics). We will stop unless we have compelling legitimate grounds.</li>
+        </ul>
+
+        <h3>How to exercise your rights</h3>
+        <p>For data stored on your device, you can exercise your rights directly through the app:</p>
+        <ul>
+            <li><strong>Access and portability</strong> - Use the data export feature in Settings.</li>
+            <li><strong>Erasure</strong> - Use "Delete all data" in Settings, or uninstall the app.</li>
+        </ul>
+        <p>For data held by third-party processors (Firebase, RevenueCat, Google), email us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> with the subject line "GDPR Data Request". Please include your email address so we can identify your account. We will respond within 30 days. There is no fee for exercising your rights. If your request is complex or you make multiple requests, we may extend the response period by up to 60 additional days and will inform you of the extension.</p>
+
+        <h2>10. Right to withdraw consent</h2>
+        <p>Where we rely on your consent as the legal basis for processing (Firebase Analytics, Google Drive backup, and Google Calendar sync), you have the right to withdraw that consent at any time. Withdrawing consent does not affect the lawfulness of any processing we carried out before you withdrew it.</p>
+        <p>To withdraw consent:</p>
+        <ul>
+            <li><strong>Firebase Analytics</strong> - Disable analytics in the app settings. Analytics data collection will stop immediately.</li>
+            <li><strong>Google Drive backup</strong> - Disable backup in the app settings. You can also revoke Swipcall's access to Google Drive in your Google account settings.</li>
+            <li><strong>Google Calendar sync</strong> - Disconnect calendar sync in the app settings. You can also revoke Swipcall's access to Google Calendar in your Google account settings.</li>
+        </ul>
+
+        <h2>11. Right to lodge a complaint</h2>
+        <p>If you believe that our processing of your personal data violates the GDPR, you have the right to lodge a complaint with a supervisory authority. You can do this in the EU/EEA member state where you live, where you work, or where the alleged violation took place.</p>
+        <p>A list of EU/EEA data protection authorities is available on the <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">European Data Protection Board website</a>.</p>
+        <p>If you are in Israel, you may also lodge a complaint with the <a href="https://www.gov.il/he/departments/the_privacy_protection_authority" target="_blank" rel="noopener">Israeli Privacy Protection Authority (PPA)</a>.</p>
+        <p>We encourage you to contact us first at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> so we can try to resolve your concern directly.</p>
+
+        <h2>12. Obligation to provide data</h2>
+        <p>Providing your data to Swipcall is not a statutory or contractual requirement. However:</p>
+        <ul>
+            <li><strong>Google Sign-In (email, name)</strong> is required to create an account and use the app. If you choose not to sign in, you cannot use Swipcall.</li>
+            <li><strong>Android permissions</strong> (call log, contacts, etc.) are needed for specific features. Denying them will disable those features but will not prevent you from using the rest of the app.</li>
+            <li><strong>Pro features</strong> (backup, calendar sync) are entirely optional. There are no consequences for choosing not to use them.</li>
+        </ul>
+
+        <h2>13. Automated decision-making and profiling</h2>
+        <p>Swipcall does not use automated decision-making or profiling as defined in Article 22 of the GDPR. No decisions with legal or similarly significant effects are made about you based on automated processing.</p>
+
+        <h2>14. WhatsApp integration</h2>
+        <p>When you tap "Send WhatsApp" in the app, Swipcall opens the WhatsApp application using a standard Android intent (deep link) with the customer's phone number. This is a direct device-to-app communication. No data passes through any Swipcall server. The phone number is sent directly from your device to WhatsApp on your device. WhatsApp's own privacy policy governs how WhatsApp handles that data.</p>
+
+        <h2>15. Website and cookies</h2>
+        <p>The Swipcall website (this site) uses only essential local storage (localStorage) to remember basic preferences such as your language selection and accessibility widget settings (font size, contrast, and display preferences). We do not use tracking cookies, advertising cookies, or any third-party cookies. A localStorage notice banner is displayed to inform you about this storage. localStorage does not track you across sites.</p>
+
+        <h2>16. Children's privacy</h2>
+        <p>Swipcall is a business tool designed for professionals. It is not intended for use by anyone under the age of 16. We do not knowingly collect personal data from children under 16. If you believe that a child under 16 has provided us with personal data, please contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> and we will take steps to delete that data.</p>
+
+        <h2>17. Data security</h2>
+        <p>We take the following measures to protect your data:</p>
+        <ul>
+            <li><strong>Local-first architecture</strong> - Your data stays on your device and is protected by your device's own security (screen lock, encryption).</li>
+            <li><strong>Encrypted backups</strong> - Google Drive backups are encrypted with AES-256-GCM before they leave your device. Swipcall does not have access to the encryption key.</li>
+            <li><strong>Minimal data collection</strong> - We only transmit anonymous crash and usage data to third-party services. No customer data, phone numbers, call details, or business information is ever transmitted.</li>
+            <li><strong>HTTPS</strong> - All network communication uses HTTPS encryption.</li>
+        </ul>
+
+        <h2>18. Israeli Privacy Protection Law</h2>
+        <p>Swipcall is operated from Israel and is subject to the Israeli Protection of Privacy Law, 5741-1981. In addition to the GDPR rights described above, all users have the following rights under Israeli law:</p>
+        <ul>
+            <li><strong>Right of access (Section 13)</strong> - You have the right to review any personal data about you held by us or our third-party processors.</li>
+            <li><strong>Right to correction (Section 14)</strong> - You can request correction of inaccurate personal data.</li>
+            <li><strong>Right to object to direct marketing (Section 30)</strong> - You can object to the use of your data for direct marketing purposes. Swipcall does not currently engage in direct marketing.</li>
+        </ul>
+        <p>To exercise these rights, contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>.</p>
+        <p>If you believe your privacy rights under Israeli law have been violated, you may lodge a complaint with the <a href="https://www.gov.il/he/departments/the_privacy_protection_authority" target="_blank" rel="noopener">Israeli Privacy Protection Authority (PPA)</a>.</p>
+        <p>Under the Israeli Protection of Privacy Law, database registration with the Registrar of Databases is required when a database contains personal data of more than 10,000 individuals. Swipcall will complete this registration if and when this threshold is reached.</p>
+
+        <h2>19. Changes to this privacy policy</h2>
+
+        <p>We may update this privacy policy from time to time to reflect changes in the app, the law, or our practices. When we make changes:</p>
+        <ul>
+            <li>We will update the "Last updated" date at the top of this page.</li>
+            <li>For significant changes that affect your rights or how your data is processed, we will notify you through an in-app notification before the changes take effect.</li>
+            <li>If a change requires your consent under the GDPR, we will ask for it before applying the new processing.</li>
+        </ul>
+        <p>We encourage you to review this page periodically.</p>
+
+        <h2>20. Contact us</h2>
+        <p>If you have questions about this privacy policy, want to exercise your data rights, or have a concern about how your data is handled, please contact us:</p>
+        <p>
+            Email: <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a><br>
+            Subject line for data requests: "GDPR Data Request"
+        </p>
+        <p>We aim to respond to all inquiries within 30 days.</p>
+
         <p style="margin-top:40px;font-size:13px;color:#6E6E74">Swipcall</p>
     </div>
     <script src="/js/a11y.js" defer></script>
