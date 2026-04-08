@@ -1,0 +1,82 @@
+/* CookieConsent v3 - Swipcall dark theme via CSS variables */
+
+:root {
+    --cc-bg: #1C1C1E !important;
+    --cc-primary-color: #F5F5F7 !important;
+    --cc-secondary-color: #D4D4D8 !important;
+    --cc-btn-primary-bg: #FF6B35 !important;
+    --cc-btn-primary-color: #1C1C1E !important;
+    --cc-btn-primary-border-color: #FF6B35 !important;
+    --cc-btn-primary-hover-bg: #FF8A5C !important;
+    --cc-btn-primary-hover-color: #1C1C1E !important;
+    --cc-btn-primary-hover-border-color: #FF8A5C !important;
+    --cc-btn-secondary-bg: #2C2C2E !important;
+    --cc-btn-secondary-color: #D4D4D8 !important;
+    --cc-btn-secondary-border-color: #48484A !important;
+    --cc-btn-secondary-hover-bg: #3A3A3C !important;
+    --cc-btn-secondary-hover-color: #FFFFFF !important;
+    --cc-btn-secondary-hover-border-color: #FF6B35 !important;
+    --cc-separator-border-color: #3A3A3C !important;
+    --cc-toggle-on-bg: #FF6B35 !important;
+    --cc-toggle-off-bg: #48484A !important;
+    --cc-toggle-readonly-bg: #3A3A3C !important;
+    --cc-cookie-category-block-bg: #2C2C2E !important;
+    --cc-cookie-category-block-border: #3A3A3C !important;
+    --cc-cookie-category-block-hover-bg: #3A3A3C !important;
+    --cc-cookie-category-block-hover-border: #48484A !important;
+    --cc-cookie-category-expanded-block-bg: #252527 !important;
+    --cc-cookie-category-expanded-block-hover-bg: #2C2C2E !important;
+    --cc-section-category-border: #3A3A3C !important;
+    --cc-footer-bg: #2C2C2E !important;
+    --cc-footer-border-color: #3A3A3C !important;
+    --cc-footer-color: #A3A3A9 !important;
+    --cc-overlay-bg: rgba(0, 0, 0, 0.65) !important;
+    --cc-link-color: #FF8A5C !important;
+    --cc-webkit-scrollbar-bg: #3A3A3C !important;
+    --cc-webkit-scrollbar-hover-bg: #48484A !important;
+    --cc-font-family: 'Inter', system-ui, sans-serif !important;
+    --cc-modal-border-radius: 12px !important;
+    --cc-btn-border-radius: 8px !important;
+}
+
+/* Direct overrides for dropdown/accordion sections */
+#cc-main .pm__section--toggle .pm__section-title-wrapper{background:#2C2C2E !important;color:#F5F5F7 !important}
+#cc-main .pm__section--toggle .pm__section-title-wrapper:hover{background:#3A3A3C !important}
+#cc-main .pm__section--toggle .pm__section-title{color:#FFFFFF !important}
+#cc-main .pm__section--toggle .pm__section-desc-wrapper{background:#1C1C1E !important}
+#cc-main .pm__section--expandable .pm__section-title-wrapper{background:#2C2C2E !important;color:#F5F5F7 !important}
+#cc-main .pm__section--expandable .pm__section-title-wrapper:hover{background:#3A3A3C !important}
+#cc-main .pm__section--expandable .pm__section-title{color:#FFFFFF !important}
+#cc-main .pm__section--expandable .pm__section-desc-wrapper{background:#1C1C1E !important}
+
+/* Catch-all: any element inside preferences modal */
+#cc-main .pm *{border-color:#3A3A3C}
+#cc-main .pm__body .pm__section{background:#1C1C1E !important}
+#cc-main .pm__header{background:#2C2C2E !important}
+#cc-main .pm__footer{background:#2C2C2E !important}
+
+/* Modal shadow and border */
+#cc-main .cm{box-shadow:0 8px 32px rgba(0,0,0,0.6) !important;border:1px solid #48484A !important}
+#cc-main .pm{box-shadow:0 8px 32px rgba(0,0,0,0.6) !important;border:1px solid #48484A !important}
+
+/* Title font */
+#cc-main .cm__title,
+#cc-main .pm__title,
+#cc-main .pm__section-title{font-family:'Space Grotesk',system-ui,sans-serif !important}
+
+/* Ensure strong text is white */
+#cc-main .pm__section-desc strong{color:#FFFFFF !important}
+
+/* Button min height for accessibility */
+#cc-main .cm__btn,
+#cc-main .pm__btn{min-height:44px;font-weight:700}
+
+/* Footer links */
+#cc-main .cm__footer a{color:#A3A3A9;font-size:12px}
+#cc-main .cm__footer a:hover{color:#FF8A5C}
+
+/* Toggle label text */
+#cc-main .pm__section-title-wrapper .pm__badge{background:#3A3A3C !important;color:#D4D4D8 !important}
+
+/* Chevron/arrow icon color */
+#cc-main .pm__section-arrow{color:#D4D4D8 !important}

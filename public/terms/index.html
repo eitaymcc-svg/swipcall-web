@@ -7,6 +7,8 @@
     <meta name="robots" content="noindex">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#1C1C1E">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+    <link rel="stylesheet" href="/css/cookieconsent-dark.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
@@ -16,6 +18,8 @@
         .date{font-size:13px;color:#A3A3A9;margin-bottom:48px}
         h2{font-size:20px;font-weight:700;color:#fff;margin:40px 0 12px}
         p{margin-bottom:16px;font-size:16px}
+        ul{margin-bottom:16px;padding-left:24px;font-size:16px}
+        li{margin-bottom:8px}
         a{color:#FF6B35}
         .back{display:inline-block;margin-bottom:32px;color:#A3A3A9;text-decoration:none;font-size:14px}
         .back:hover{color:#fff}
@@ -23,41 +27,224 @@
 </head>
 <body>
     <div class="wrap">
-        <a href="/" class="back">← Back to Swipcall</a>
+        <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Terms of Service</h1>
-        <p class="date">Last updated: April 2, 2026</p>
+        <p class="date">Last updated: April 3, 2026</p>
 
-        <h2>Acceptance</h2>
-        <p>By installing or using Swipcall, you agree to these terms. If you do not agree, do not use the app.</p>
+        <!-- 1. Acceptance of Terms -->
+        <h2>1. Acceptance of Terms</h2>
+        <p>These Terms of Service ("Terms") form a legally binding agreement between you ("User", "you", or "your") and Swipcall ("we", "us", or "our"), Cadvix, an unregistered partnership based in Israel.</p>
+        <p>By downloading, installing, creating an account, or otherwise using the Swipcall mobile application ("App" or "Service"), you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="/privacy/">Privacy Policy</a>, which is incorporated by reference.</p>
+        <p>If you do not agree to any part of these Terms, you must not install or use the App and should uninstall it immediately.</p>
 
-        <h2>The service</h2>
-        <p>Swipcall is a customer management tool for Android. It provides a floating popup overlay during and after phone calls, a customer list, calendar, WhatsApp messaging, and callback reminders.</p>
+        <!-- 2. Description of the Service -->
+        <h2>2. Description of the Service</h2>
+        <p>Swipcall is an Android mobile application designed for tradespeople and small business operators. It provides customer relationship management tools including:</p>
+        <ul>
+            <li>A floating popup overlay that appears during and after phone calls</li>
+            <li>Customer contact list and management</li>
+            <li>Appointment scheduling and calendar functionality</li>
+            <li>WhatsApp messaging integration</li>
+            <li>Callback reminders and notifications</li>
+            <li>Additional features as described on our website and in the App</li>
+        </ul>
+        <p>Swipcall operates on a local-first architecture. Your data is stored on your device and is not transmitted to or stored on our servers unless a specific feature explicitly requires it (such as Google Drive backup in the Pro tier).</p>
+        <p><strong>WhatsApp messaging.</strong> When you use the WhatsApp messaging feature, data is sent directly from your device to WhatsApp via standard Android intents. This interaction is governed by <a href="https://www.whatsapp.com/legal/terms-of-service" rel="noopener noreferrer" target="_blank">WhatsApp's Terms of Service</a>. Swipcall does not intercept, store, or process WhatsApp messages.</p>
 
-        <h2>Free and Pro tiers</h2>
-        <p>The free tier includes all core features with limits (20 customers, 20 appointments per month). A Pro tier with expanded limits will be available in the future. Free tier features will remain free.</p>
+        <!-- 3. Eligibility -->
+        <h2>3. Eligibility</h2>
+        <p>To use Swipcall, you must:</p>
+        <ul>
+            <li>Be at least 16 years of age (or the minimum age required by applicable law in your jurisdiction)</li>
+            <li>Have the legal capacity to enter into a binding agreement</li>
+            <li>Not be a person barred from using the Service under the laws of your country of residence or any other applicable jurisdiction</li>
+        </ul>
+        <p>By using the App, you represent and warrant that you meet all of the above eligibility requirements.</p>
 
-        <h2>Your data</h2>
-        <p>You own your data. Swipcall stores data locally on your device. We do not access, collect, or sell your data. See our <a href="/privacy/">Privacy Policy</a> for details.</p>
+        <!-- 4. Account and Authentication -->
+        <h2>4. Account and Authentication</h2>
+        <p>Swipcall uses Google Sign-In for authentication. By signing in, you authorize us to access the basic profile information provided by Google (such as your name and email address) for the purpose of creating and managing your Swipcall account.</p>
+        <p>You are solely responsible for:</p>
+        <ul>
+            <li>Maintaining the confidentiality and security of your Google account credentials</li>
+            <li>All activity that occurs under your account</li>
+            <li>Notifying us promptly if you suspect unauthorized use of your account</li>
+        </ul>
+        <p>We are not liable for any loss or damage arising from unauthorized access to your account resulting from your failure to safeguard your credentials.</p>
 
-        <h2>Account</h2>
-        <p>Swipcall uses Google Sign-In for authentication. You are responsible for maintaining the security of your Google account.</p>
+        <!-- 5. Free and Pro Tiers -->
+        <h2>5. Free and Pro Tiers</h2>
+        <p><strong>Free Tier.</strong> The free tier of Swipcall includes core features subject to the following usage limits:</p>
+        <ul>
+            <li>Up to 20 customers</li>
+            <li>Up to 20 appointments per calendar month</li>
+            <li>Floating popup overlay during and after calls</li>
+            <li>WhatsApp messaging</li>
+            <li>Callback reminders</li>
+        </ul>
+        <p>Free tier features and their current limits will remain free. We reserve the right to adjust specific numerical limits with reasonable prior notice, but we will not remove access to core free features or reduce limits below the values stated above without offering a migration path.</p>
+        <p><strong>Pro Tier.</strong> A paid Pro tier is planned and, when available, will include additional features such as:</p>
+        <ul>
+            <li>Unlimited customers and appointments</li>
+            <li>Message and response templates</li>
+            <li>Google Calendar synchronization</li>
+            <li>Google Drive backup</li>
+            <li>Voice notes</li>
+        </ul>
+        <p>Pro tier features, pricing, and availability may change. The specific features included in the Pro tier at any given time will be as described on the Google Play Store listing and within the App.</p>
 
-        <h2>Acceptable use</h2>
-        <p>You agree not to use Swipcall for any unlawful purpose, to spam contacts, or to violate any person's privacy. You agree not to reverse-engineer, decompile, or modify the app.</p>
+        <!-- 6. Subscription Terms -->
+        <h2>6. Subscription Terms</h2>
+        <p>Pro tier subscriptions are processed and managed through Google Play and RevenueCat. By subscribing, you also agree to <a href="https://play.google.com/intl/en_us/about/play-terms/" rel="noopener noreferrer" target="_blank">Google Play's Terms of Service</a>.</p>
+        <p><strong>Billing.</strong> Subscription fees are charged through your Google Play account at the price displayed at the time of purchase. Prices are shown inclusive of applicable taxes where required by law.</p>
+        <p><strong>Renewal.</strong> Subscriptions automatically renew at the end of each billing period unless you cancel. Renewal is charged within 24 hours before the end of the current billing period at the then-current subscription price.</p>
+        <p><strong>Cancellation.</strong> You may cancel your subscription at any time through the Google Play Store subscription settings on your device. Cancellation takes effect at the end of the current billing period. You will retain access to Pro features until the end of the period you have already paid for.</p>
+        <p><strong>Refunds.</strong> Refund requests are handled by Google Play in accordance with their refund policies. We do not process payments or refunds directly. If you believe you are entitled to a refund, please contact Google Play support or reach out to us and we will assist where possible.</p>
+        <p><strong>Price changes.</strong> We may change subscription prices from time to time. Any price change will take effect at the start of the next billing period following notice of the change. If you do not agree with the new price, you may cancel before the change takes effect.</p>
+        <p><strong>EU right of withdrawal.</strong> If you are a consumer in the European Union, you have a 14-day right of withdrawal from the date of purchase. By using the App immediately after purchase, you acknowledge and agree that you request the digital content to be provided before the end of the withdrawal period. You retain the right to withdraw if the digital content is defective or not as described.</p>
+        <p><strong>Israeli consumer cancellation rights.</strong> If you are a consumer in Israel, you have the right to cancel a distance transaction within 14 days under the Israeli Consumer Protection Law, 5741-1981. Cancellation fees, if applicable, will not exceed the amounts prescribed by law. Cancellation is processed through Google Play.</p>
 
-        <h2>Availability</h2>
-        <p>We aim to keep Swipcall available at all times, but we do not guarantee uninterrupted service. We may update, modify, or discontinue features with reasonable notice.</p>
+        <!-- 7. User Responsibilities and Acceptable Use -->
+        <h2>7. User Responsibilities and Acceptable Use</h2>
+        <p>You agree to use the App only for lawful purposes and in accordance with these Terms. Specifically, you agree not to:</p>
+        <ul>
+            <li>Use the App for any purpose that is unlawful or prohibited by these Terms</li>
+            <li>Use the App to send unsolicited messages, spam, or harass any person</li>
+            <li>Use the App in a manner that violates any person's privacy rights or applicable data protection laws</li>
+            <li>Attempt to reverse-engineer, decompile, disassemble, or otherwise derive the source code of the App</li>
+            <li>Modify, adapt, translate, or create derivative works based on the App</li>
+            <li>Remove, alter, or obscure any proprietary notices, labels, or marks on the App</li>
+            <li>Use the App to transmit any viruses, malware, or other harmful code</li>
+            <li>Circumvent, disable, or interfere with any security or access-control features of the App</li>
+            <li>Use the App in any way that could damage, disable, or impair the App or interfere with any other party's use</li>
+            <li>Use automated means (bots, scrapers, or similar) to interact with the App</li>
+        </ul>
+        <p>You are responsible for ensuring that your use of the App complies with all laws and regulations applicable to you, including telecommunications laws and data protection regulations in your jurisdiction.</p>
 
-        <h2>Limitation of liability</h2>
-        <p>Swipcall is provided "as is." We are not liable for any lost data, missed calls, lost business, or any indirect damages arising from use of the app.</p>
+        <!-- 8. Intellectual Property Rights -->
+        <h2>8. Intellectual Property Rights</h2>
+        <p>The App, including its design, code, graphics, logos, user interface, and all other materials ("Swipcall Materials"), is owned by Swipcall and is protected by copyright, trademark, and other intellectual property laws.</p>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App on your Android device solely for your personal or internal business purposes, subject to these Terms. This license does not include the right to:</p>
+        <ul>
+            <li>Sublicense, sell, resell, or distribute the App</li>
+            <li>Copy or reproduce any part of the Swipcall Materials except as necessary for normal use</li>
+            <li>Use the Swipcall name, logo, or trademarks without prior written consent</li>
+        </ul>
+        <p>All rights not expressly granted to you are reserved by Swipcall.</p>
 
-        <h2>Changes</h2>
-        <p>We may update these terms. Continued use of the app after changes constitutes acceptance.</p>
+        <!-- 9. User-Generated Content and Data Ownership -->
+        <h2>9. User-Generated Content and Data Ownership</h2>
+        <p><strong>Your data belongs to you.</strong> All data you create, enter, or store using the App - including customer records, appointments, notes, and any other content - remains your property at all times.</p>
+        <p>Because Swipcall uses a local-first architecture, your data is stored on your device. We do not have access to, collect, or store your customer data on our servers. You are solely responsible for backing up your data and for any loss of data resulting from device failure, loss, theft, or App uninstallation.</p>
+        <p>If you use features that involve third-party services (such as Google Drive backup), the transfer and storage of your data by those services is governed by their respective terms and privacy policies.</p>
+        <p>We do not claim any ownership of or license to your data. We will never sell, share, or monetize your data.</p>
 
-        <h2>Contact</h2>
-        <p>Questions? Email <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a></p>
-        <p style="margin-top:40px;font-size:13px;color:#6E6E74">Swipcall</p>
+        <!-- 10. Privacy -->
+        <h2>10. Privacy</h2>
+        <p>Your privacy is important to us. Our collection, use, and handling of personal information is described in our <a href="/privacy/">Privacy Policy</a>, which forms part of these Terms.</p>
+        <p>By using the App, you consent to the collection and use of information as set forth in the Privacy Policy. If you are located in the European Economic Area (EEA), the United Kingdom, or another jurisdiction with specific data protection laws, our Privacy Policy describes the legal bases for processing your personal data and your rights under applicable law.</p>
+
+        <!-- 11. Disclaimer of Warranties -->
+        <h2>11. Disclaimer of Warranties</h2>
+        <p>To the maximum extent permitted by applicable law, the App is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express, implied, or statutory.</p>
+        <p>We expressly disclaim all implied warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement.</p>
+        <p>Without limiting the foregoing, we do not warrant that:</p>
+        <ul>
+            <li>The App will be uninterrupted, timely, secure, or error-free</li>
+            <li>The results obtained from using the App will be accurate or reliable</li>
+            <li>The App will be compatible with all Android devices or operating system versions</li>
+            <li>Any defects in the App will be corrected</li>
+        </ul>
+        <p><strong>EU consumers:</strong> Nothing in this section affects your statutory rights as a consumer under EU law, including your rights under the EU Consumer Rights Directive (2011/83/EU) and the Digital Content Directive (2019/770/EU). Where the App does not conform to the objective or subjective requirements of conformity under applicable EU consumer law, you are entitled to the remedies provided by that law.</p>
+        <p><strong>Israeli consumers:</strong> If you are a consumer in Israel, this section is subject to the mandatory provisions of the Israeli Consumer Protection Law and the Standard Contracts Law, 5743-1982. Nothing in these Terms limits any mandatory rights you have under applicable Israeli law.</p>
+
+        <!-- 12. Limitation of Liability -->
+        <h2>12. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law:</p>
+        <ul>
+            <li>Swipcall, its developer, affiliates, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, revenue, data, business opportunities, or goodwill, arising out of or in connection with your use of or inability to use the App, even if we have been advised of the possibility of such damages.</li>
+            <li>Our total aggregate liability to you for all claims arising out of or relating to these Terms or the App shall not exceed the amount you have paid to us in the twelve (12) months immediately preceding the event giving rise to the claim, or fifty (50) USD, whichever is greater.</li>
+        </ul>
+        <p><strong>EU consumer protection carve-out:</strong> If you are a consumer in the European Union or the European Economic Area, this limitation of liability does not apply to:</p>
+        <ul>
+            <li>Liability for death or personal injury caused by our negligence</li>
+            <li>Liability for fraud or fraudulent misrepresentation</li>
+            <li>Liability for intentional misconduct or gross negligence</li>
+            <li>Any other liability that cannot be excluded or limited under applicable EU member state law</li>
+        </ul>
+        <p>Nothing in these Terms shall exclude or limit any mandatory statutory rights you may have as a consumer.</p>
+        <p><strong>Israeli consumers:</strong> If you are a consumer in Israel, this section is subject to the mandatory provisions of the Israeli Consumer Protection Law and the Standard Contracts Law, 5743-1982. Nothing in these Terms limits any mandatory rights you have under applicable Israeli law.</p>
+
+        <!-- 13. Indemnification -->
+        <h2>13. Indemnification</h2>
+        <p>You agree to defend, indemnify, and hold harmless Swipcall and its developer from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising out of or relating to:</p>
+        <ul>
+            <li>(a) Your willful violation of these Terms</li>
+            <li>(b) Your willful violation of applicable law</li>
+            <li>(c) Your infringement of third-party intellectual property rights</li>
+        </ul>
+        <p><strong>EU consumers:</strong> This indemnification obligation applies only to the extent that the relevant claim arises from your willful misconduct, negligence, or breach of these Terms. It does not require you to indemnify us for claims arising from our own fault or from defects in the App.</p>
+        <p><strong>Israeli consumers:</strong> If you are a consumer in Israel, this indemnification obligation is subject to the fairness requirements of the Standard Contracts Law, 5743-1982, and shall not be construed to impose obligations that are disproportionate or unfair under applicable Israeli law.</p>
+
+        <!-- 14. Termination -->
+        <h2>14. Termination</h2>
+        <p><strong>By you.</strong> You may stop using the App and delete your account at any time. Uninstalling the App from your device will remove all locally stored data. If you have an active Pro subscription, you must cancel it separately through Google Play to avoid continued billing.</p>
+        <p><strong>By us.</strong> We may suspend or terminate your access to the App for material breach of these Terms, fraud, abuse, or other legitimate grounds. We will provide at least 30 days advance notice except where immediate action is required. If you have an active paid subscription and we terminate without fault on your part, you are entitled to a pro-rata refund.</p>
+        <p><strong>Effect of termination.</strong> Upon termination, your license to use the App is revoked. Sections of these Terms that by their nature should survive termination will survive, including but not limited to Sections 8 (Intellectual Property), 9 (Data Ownership), 11 (Disclaimer), 12 (Limitation of Liability), 13 (Indemnification), 15 (Governing Law), and 17 (Entire Agreement).</p>
+        <p>We are not liable to you or any third party for any termination of your access to the App.</p>
+
+        <!-- 15. Governing Law and Dispute Resolution -->
+        <h2>15. Governing Law and Dispute Resolution</h2>
+        <p><strong>Governing law.</strong> These Terms are governed by and construed in accordance with the laws of the State of Israel, without regard to its conflict of law principles.</p>
+        <p><strong>Jurisdiction.</strong> Any dispute, claim, or controversy arising out of or relating to these Terms or the App shall be subject to the exclusive jurisdiction of the competent courts of Tel Aviv-Jaffa, Israel.</p>
+        <p><strong>EU consumers:</strong> If you are a consumer habitually resident in the European Union, you also benefit from any mandatory provisions of the law of your country of residence. Nothing in these Terms affects your right as an EU consumer to rely on such mandatory provisions. You may bring proceedings in the courts of your country of residence, and we acknowledge your right to do so under Regulation (EU) No 1215/2012.</p>
+        <p><strong>Israeli consumers:</strong> If you are a consumer in Israel, nothing in this section limits your right to bring proceedings in a court with jurisdiction under Israeli law.</p>
+        <p><strong>Online dispute resolution:</strong> If you are a consumer in the EU, you may use the European Commission's Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer" target="_blank">https://ec.europa.eu/consumers/odr</a>. We are not obligated to participate in alternative dispute resolution proceedings, but we will consider each request in good faith.</p>
+        <p><strong>Informal resolution.</strong> Before initiating any formal dispute proceedings, you agree to first contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> and attempt to resolve the dispute informally for at least thirty (30) days.</p>
+
+        <!-- 16. Severability -->
+        <h2>16. Severability</h2>
+        <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if modification is not possible, it shall be severed from these Terms. The remaining provisions shall continue in full force and effect.</p>
+
+        <!-- 17. Entire Agreement -->
+        <h2>17. Entire Agreement</h2>
+        <p>These Terms, together with the <a href="/privacy/">Privacy Policy</a> and any terms applicable to your subscription through Google Play, constitute the entire agreement between you and Swipcall regarding your use of the App. These Terms supersede all prior or contemporaneous agreements, communications, and proposals, whether oral or written, relating to the subject matter hereof.</p>
+        <p>No waiver of any provision of these Terms shall be deemed a further or continuing waiver of that or any other provision. Our failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</p>
+
+        <!-- 18. Changes to Terms -->
+        <h2>18. Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. When we make changes, we will update the "Last updated" date at the top of this page.</p>
+        <p>For material changes that affect your rights or obligations, we will make reasonable efforts to notify you through one or more of the following means:</p>
+        <ul>
+            <li>An in-app notification</li>
+            <li>A notice on our website</li>
+            <li>An update to the App's Google Play Store listing</li>
+        </ul>
+        <p>Your continued use of the App after the effective date of any changes constitutes your acceptance of the revised Terms. If you do not agree with the changes, you must stop using the App and uninstall it.</p>
+        <p><strong>EU consumers:</strong> For material changes, we will provide at least thirty (30) days' advance notice. If you do not accept the modified Terms, you may terminate your use of the App and, where applicable, receive a pro-rata refund for any prepaid subscription period.</p>
+        <p><strong>Israeli consumers:</strong> If you are a consumer in Israel, material changes require your affirmative consent. If you do not accept material changes, you may terminate without penalty.</p>
+
+        <!-- 19. Contact Information -->
+        <h2>19. Contact Information</h2>
+        <p>If you have any questions, concerns, or complaints about these Terms or the App, please contact us:</p>
+        <p>
+            Swipcall<br>
+            Email: <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>
+        </p>
+        <p>We will make reasonable efforts to respond to your inquiry within a reasonable time frame.</p>
+
+        <!-- 20. Force Majeure -->
+        <h2>20. Force Majeure</h2>
+        <p>We shall not be liable for any failure or delay in performing our obligations under these Terms if such failure or delay results from circumstances beyond our reasonable control, including but not limited to: natural disasters, acts of war or terrorism, epidemics or pandemics, government actions or orders, failures of third-party services (including Google Play, Google Sign-In, or internet service providers), power outages, cyberattacks, or other events beyond our reasonable control ("Force Majeure Event").</p>
+        <p>In the event of a Force Majeure Event, our obligations under these Terms will be suspended for the duration of the event. We will make reasonable efforts to resume performance as soon as practicable after the event ends.</p>
+
+        <p style="margin-top:60px;padding-top:24px;border-top:1px solid #333;font-size:13px;color:#6E6E74">
+            &copy; 2026 Swipcall. All rights reserved.<br>
+            These Terms of Service are effective as of April 3, 2026.
+        </p>
     </div>
     <script src="/js/a11y.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js" defer></script>
+    <script src="/js/cookieconsent-config.js" defer></script>
 </body>
 </html>

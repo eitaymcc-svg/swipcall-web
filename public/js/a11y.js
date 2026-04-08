@@ -1,27 +1,6 @@
 (function(){
 'use strict';
 
-/* ===== COOKIE CONSENT ===== */
-function initCookieConsent(){
-    if(localStorage.getItem('swipcall_cookie_consent'))return;
-    var bar=document.createElement('div');
-    bar.id='cookie-bar';
-    bar.setAttribute('role','dialog');
-    bar.setAttribute('aria-label','Cookie notice');
-    bar.innerHTML=
-        '<div class="cb-inner">'+
-            '<p class="cb-text">This website uses essential cookies to ensure proper functionality. No tracking or advertising cookies are used. '+
-                '<a href="/privacy/">Learn more</a></p>'+
-            '<button class="cb-btn" id="cb-accept">Got it</button>'+
-        '</div>';
-    document.body.appendChild(bar);
-    document.getElementById('cb-accept').addEventListener('click',function(){
-        localStorage.setItem('swipcall_cookie_consent','1');
-        bar.classList.add('cb-hide');
-        setTimeout(function(){bar.remove()},400);
-    });
-}
-
 /* ===== ACCESSIBILITY WIDGET (EN 301 549 / EAA compliant) ===== */
 function initA11yWidget(){
     var state={
@@ -38,16 +17,7 @@ function initA11yWidget(){
 
     var css=document.createElement('style');
     css.textContent=
-        /* Cookie bar */
-        '#cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#2C2C2E;border-top:1px solid #48484A;padding:14px 24px;transform:translateY(0);transition:transform .4s ease,opacity .4s ease}'+
-        '#cookie-bar.cb-hide{transform:translateY(100%);opacity:0}'+
-        '.cb-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}'+
-        '.cb-text{font-size:13px;color:#A3A3A9;flex:1;min-width:200px;line-height:1.5}'+
-        '.cb-text a{color:#FF6B35}'+
-        '.cb-btn{background:#FF6B35;color:#1C1C1E;border:none;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;transition:background .2s}'+
-        '.cb-btn:hover{background:#FF8A5C}'+
-
-        /* A11y root — sits on <html> not <body>, immune to body filters */
+        /* A11y root - sits on <html> not <body>, immune to body filters */
         '#a11y-root{position:fixed;bottom:0;left:0;z-index:99999;pointer-events:none}'+
         '#a11y-root>*{pointer-events:auto}'+
 
@@ -312,10 +282,9 @@ function initA11yWidget(){
 
 /* ===== INIT ===== */
 if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',function(){initA11yWidget();initCookieConsent();});
+    document.addEventListener('DOMContentLoaded',function(){initA11yWidget();});
 }else{
     initA11yWidget();
-    initCookieConsent();
 }
 
 })();
