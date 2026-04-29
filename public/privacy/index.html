@@ -36,7 +36,13 @@
     <div class="wrap">
         <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Privacy Policy</h1>
-        <p class="date">Last updated: April 3, 2026</p>
+        <p class="date">Last updated: April 29, 2026</p>
+
+        <p><strong>Two commitments before we get into the detail:</strong></p>
+        <ul>
+            <li><strong>Your data stays on your device.</strong> Your customer list, call history, and calendar live in a local SQLite database on your phone. We do not run a server that holds your customer data.</li>
+            <li><strong>No data selling. Ever.</strong> We do not sell your data, share it with advertising networks, or work with data brokers. Swipcall is funded by Pro subscriptions, not by your data.</li>
+        </ul>
 
         <h2>1. Introduction</h2>
         <p>This privacy policy explains how Swipcall collects, uses, and protects information when you use the Swipcall Android application and this website. Swipcall is a local-first customer management app built for tradespeople such as plumbers, electricians, and locksmiths. We designed Swipcall so that your personal and business data stays on your device. This policy is written in plain language so you can understand exactly what happens with your data.</p>
@@ -47,9 +53,9 @@
         <p>
             <strong>Swipcall</strong><br>
             Operated by Cadvix, an unregistered partnership based in Israel<br>
-            Email: <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>
+            Email: <a href="mailto:admin@swipcall.com">admin@swipcall.com</a>
         </p>
-        <p>Given the nature and scale of our processing activities, we are not required to appoint a Data Protection Officer under Article 37 of the GDPR. For all privacy-related matters, contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>.</p>
+        <p>Given the nature and scale of our processing activities, we are not required to appoint a Data Protection Officer under Article 37 of the GDPR. For all privacy-related matters, contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a>.</p>
         <p>For all privacy-related requests, including exercising your rights under the GDPR, please contact us at the email above. We aim to respond within 30 days.</p>
 
         <h2>3. Categories of personal data we process</h2>
@@ -64,6 +70,8 @@
             <li><strong>App settings and preferences</strong> - your configuration choices.</li>
         </ul>
         <p>This data is stored in a local SQLite database on your Android device. Swipcall has no server that receives this data. We cannot access, read, or recover it.</p>
+
+        <p><strong>Voice notes (removed feature):</strong> Earlier versions of Swipcall included a voice notes feature, which has been removed. If you upgrade from a version that had it, any leftover voice notes on your device are deleted on first launch via a database migration. Voice notes were never sent to or stored by us.</p>
 
         <h3>3.2 Data processed by third-party services</h3>
         <table>
@@ -88,9 +96,14 @@
                 <td>Understanding which features are used so we can improve the app</td>
             </tr>
             <tr>
-                <td>Anonymous user ID, purchase receipts</td>
+                <td>Email address, display name, occupation, user ID, purchase receipts</td>
                 <td>RevenueCat</td>
-                <td>Managing subscriptions and verifying purchases</td>
+                <td>Managing subscriptions, verifying purchases, and understanding our user base to improve the service</td>
+            </tr>
+            <tr>
+                <td>Anonymous crash reports (with personal information scrubbed before transmission)</td>
+                <td>Sentry (Functional Software, Inc.)</td>
+                <td>Identifying and fixing bugs that cause the app to crash</td>
             </tr>
         </table>
 
@@ -136,6 +149,11 @@
                 <td>Firebase Crashlytics (anonymous crash reports)</td>
                 <td>Art. 6(1)(f) - Legitimate interest</td>
                 <td>Our legitimate interest is maintaining app stability and fixing bugs. The data is anonymous and the impact on your privacy is minimal.</td>
+            </tr>
+            <tr>
+                <td>Sentry (anonymous crash reports with PII scrubbing)</td>
+                <td>Art. 6(1)(f) - Legitimate interest</td>
+                <td>Our legitimate interest is maintaining app stability and fixing bugs. Personal identifiers are scrubbed before reports leave the device.</td>
             </tr>
             <tr>
                 <td>Firebase Analytics (anonymous usage counts)</td>
@@ -200,8 +218,14 @@
             <tr>
                 <td>RevenueCat Inc.</td>
                 <td>Sub-processor</td>
-                <td>Anonymous user ID, purchase receipts</td>
+                <td>Email address, display name, occupation, user ID, purchase receipts</td>
                 <td><a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>Functional Software, Inc. (Sentry)</td>
+                <td>Sub-processor</td>
+                <td>Anonymous crash reports with PII scrubbing</td>
+                <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry Privacy Policy</a></td>
             </tr>
             <tr>
                 <td>Google LLC (Google Play)</td>
@@ -215,11 +239,11 @@
 
         <h2>7. International data transfers</h2>
         <p>Swipcall is operated from Israel, which has an <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en" target="_blank" rel="noopener">adequacy decision</a> from the European Commission, meaning the Commission recognizes Israel as providing an adequate level of data protection.</p>
-        <p>Some third-party processors listed above (Google LLC and RevenueCat Inc.) are based in the United States. Data transferred to these US-based processors is protected by the following safeguards:</p>
+        <p>Some third-party processors listed above (Google LLC, RevenueCat Inc., and Functional Software, Inc. / Sentry) are based in the United States. Data transferred to these US-based processors is protected by the following safeguards:</p>
         <ul>
-            <li><strong>EU-US Data Privacy Framework</strong> - Both Google and RevenueCat are certified under the EU-US Data Privacy Framework, which the European Commission has recognized as providing adequate protection for transfers to certified US organizations.</li>
-            <li><strong>Standard Contractual Clauses (SCCs)</strong> - Google and RevenueCat also incorporate the European Commission's Standard Contractual Clauses into their data processing agreements as a supplementary safeguard.</li>
-            <li><strong>Minimal data exposure</strong> - The data sent to these services is either anonymous (crash reports, analytics events) or limited to what is strictly necessary (email for authentication, anonymous IDs for subscriptions).</li>
+            <li><strong>EU-US Data Privacy Framework</strong> - Google and RevenueCat are certified under the EU-US Data Privacy Framework, which the European Commission has recognized as providing adequate protection for transfers to certified US organizations.</li>
+            <li><strong>Standard Contractual Clauses (SCCs)</strong> - Google, RevenueCat, and Sentry incorporate the European Commission's Standard Contractual Clauses into their data processing agreements as a supplementary safeguard.</li>
+            <li><strong>Minimal data exposure</strong> - The data sent to these services is either anonymous (crash reports, analytics events) or limited to what is strictly necessary (email and basic profile data for subscription management). Crash reports sent to Sentry have personal identifiers scrubbed before transmission.</li>
         </ul>
 
         <h2>8. Data retention</h2>
@@ -251,6 +275,11 @@
                 <td>Automatically deleted by Google after the retention period</td>
             </tr>
             <tr>
+                <td>Sentry crash data</td>
+                <td>90 days (Sentry's default retention)</td>
+                <td>Automatically deleted by Sentry after the retention period</td>
+            </tr>
+            <tr>
                 <td>Firebase Analytics data</td>
                 <td>14 months (Google's default retention)</td>
                 <td>Automatically deleted by Google after the retention period</td>
@@ -258,7 +287,7 @@
             <tr>
                 <td>RevenueCat subscription data</td>
                 <td>Subscription duration plus up to 7 years as required by Israeli tax law</td>
-                <td>Contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> to request deletion after subscription ends and the tax retention period has elapsed</td>
+                <td>Contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> to request deletion after subscription ends and the tax retention period has elapsed</td>
             </tr>
         </table>
 
@@ -279,7 +308,7 @@
             <li><strong>Access and portability</strong> - Use the data export feature in Settings.</li>
             <li><strong>Erasure</strong> - Use "Delete all data" in Settings, or uninstall the app.</li>
         </ul>
-        <p>For data held by third-party processors (Firebase, RevenueCat, Google), email us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> with the subject line "GDPR Data Request". Please include your email address so we can identify your account. We will respond within 30 days. There is no fee for exercising your rights. If your request is complex or you make multiple requests, we may extend the response period by up to 60 additional days and will inform you of the extension.</p>
+        <p>For data held by third-party processors (Firebase, RevenueCat, Google), email us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> with the subject line "GDPR Data Request". Please include your email address so we can identify your account. We will respond within 30 days. There is no fee for exercising your rights. If your request is complex or you make multiple requests, we may extend the response period by up to 60 additional days and will inform you of the extension.</p>
 
         <h2>10. Right to withdraw consent</h2>
         <p>Where we rely on your consent as the legal basis for processing (Firebase Analytics, Google Drive backup, and Google Calendar sync), you have the right to withdraw that consent at any time. Withdrawing consent does not affect the lawfulness of any processing we carried out before you withdrew it.</p>
@@ -294,7 +323,7 @@
         <p>If you believe that our processing of your personal data violates the GDPR, you have the right to lodge a complaint with a supervisory authority. You can do this in the EU/EEA member state where you live, where you work, or where the alleged violation took place.</p>
         <p>A list of EU/EEA data protection authorities is available on the <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">European Data Protection Board website</a>.</p>
         <p>If you are in Israel, you may also lodge a complaint with the <a href="https://www.gov.il/he/departments/the_privacy_protection_authority" target="_blank" rel="noopener">Israeli Privacy Protection Authority (PPA)</a>.</p>
-        <p>We encourage you to contact us first at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> so we can try to resolve your concern directly.</p>
+        <p>We encourage you to contact us first at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> so we can try to resolve your concern directly.</p>
 
         <h2>12. Obligation to provide data</h2>
         <p>Providing your data to Swipcall is not a statutory or contractual requirement. However:</p>
@@ -314,14 +343,14 @@
         <p>The Swipcall website (this site) uses only essential local storage (localStorage) to remember basic preferences such as your language selection and accessibility widget settings (font size, contrast, and display preferences). We do not use tracking cookies, advertising cookies, or any third-party cookies. A localStorage notice banner is displayed to inform you about this storage. localStorage does not track you across sites.</p>
 
         <h2>16. Children's privacy</h2>
-        <p>Swipcall is a business tool designed for professionals. It is not intended for use by anyone under the age of 16. We do not knowingly collect personal data from children under 16. If you believe that a child under 16 has provided us with personal data, please contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a> and we will take steps to delete that data.</p>
+        <p>Swipcall is a business tool designed for professionals. It is not intended for use by anyone under the age of 16. We do not knowingly collect personal data from children under 16. If you believe that a child under 16 has provided us with personal data, please contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> and we will take steps to delete that data.</p>
 
         <h2>17. Data security</h2>
         <p>We take the following measures to protect your data:</p>
         <ul>
             <li><strong>Local-first architecture</strong> - Your data stays on your device and is protected by your device's own security (screen lock, encryption).</li>
             <li><strong>Encrypted backups</strong> - Google Drive backups are encrypted with AES-256-GCM before they leave your device. Swipcall does not have access to the encryption key.</li>
-            <li><strong>Minimal data collection</strong> - We only transmit anonymous crash and usage data to third-party services. No customer data, phone numbers, call details, or business information is ever transmitted.</li>
+            <li><strong>Minimal data collection</strong> - We only transmit anonymous crash and usage data to third-party services. Crash reports sent to Sentry have personal identifiers scrubbed before they leave the device. No customer data, phone numbers, call details, or business information is ever transmitted.</li>
             <li><strong>HTTPS</strong> - All network communication uses HTTPS encryption.</li>
         </ul>
 
@@ -332,7 +361,7 @@
             <li><strong>Right to correction (Section 14)</strong> - You can request correction of inaccurate personal data.</li>
             <li><strong>Right to object to direct marketing (Section 30)</strong> - You can object to the use of your data for direct marketing purposes. Swipcall does not currently engage in direct marketing.</li>
         </ul>
-        <p>To exercise these rights, contact us at <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a>.</p>
+        <p>To exercise these rights, contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a>.</p>
         <p>If you believe your privacy rights under Israeli law have been violated, you may lodge a complaint with the <a href="https://www.gov.il/he/departments/the_privacy_protection_authority" target="_blank" rel="noopener">Israeli Privacy Protection Authority (PPA)</a>.</p>
         <p>Under the Israeli Protection of Privacy Law, database registration with the Registrar of Databases is required when a database contains personal data of more than 10,000 individuals. Swipcall will complete this registration if and when this threshold is reached.</p>
 
@@ -349,7 +378,7 @@
         <h2>20. Contact us</h2>
         <p>If you have questions about this privacy policy, want to exercise your data rights, or have a concern about how your data is handled, please contact us:</p>
         <p>
-            Email: <a href="mailto:eitaymcc@gmail.com">eitaymcc@gmail.com</a><br>
+            Email: <a href="mailto:admin@swipcall.com">admin@swipcall.com</a><br>
             Subject line for data requests: "GDPR Data Request"
         </p>
         <p>We aim to respond to all inquiries within 30 days.</p>
