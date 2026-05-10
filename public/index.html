@@ -141,11 +141,12 @@
         .tag-free{background:rgba(46,204,113,.08);color:var(--green)}
         .tag-pro{background:var(--orange-glow);color:var(--orange)}
 
-        /* SCREENS GALLERY */
-        .screens-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
+        /* SCREENS WORKFLOW */
+        .screens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
         .screen{display:flex;flex-direction:column;align-items:center;gap:14px;margin:0}
+        .screen .step-num{font-family:var(--display);font-size:32px;font-weight:700;color:var(--orange);opacity:.7;line-height:1}
         .screen img{width:100%;max-width:240px;height:auto;display:block;filter:drop-shadow(0 24px 48px rgba(0,0,0,.45))}
-        .screen figcaption{font-size:14px;color:var(--dim);text-align:center;font-family:var(--display);max-width:240px}
+        .screen figcaption{font-size:15px;color:var(--silver);text-align:center;font-family:var(--display);max-width:260px;line-height:1.5}
 
         /* FREE BLOCK */
         .free-card{background:var(--bg-2);border:1px solid var(--bg-4);border-radius:16px;padding:48px;max-width:700px;margin:64px auto 0;text-align:center}
@@ -210,7 +211,6 @@
             .not-android-msg{margin:16px auto 0}
             .ba{grid-template-columns:1fr}
             .feat-grid{grid-template-columns:1fr 1fr}
-            .screens-grid{grid-template-columns:repeat(2,1fr);gap:32px}
         }
         @media(max-width:768px){
             .nav{padding:0 24px;height:56px}
@@ -231,9 +231,7 @@
             .ba-card{padding:32px 24px}
             .faq-item summary{padding:24px 28px;min-height:64px}
             .faq-item .fb{padding:0 28px 24px}
-        }
-        @media(max-width:560px){
-            .screens-grid{grid-template-columns:1fr}
+            .screens-grid{grid-template-columns:1fr;gap:40px}
         }
     </style>
     <noscript><style>.will-animate{opacity:1!important;transform:none!important}</style></noscript>
@@ -378,28 +376,28 @@
     </div>
 </section>
 
-<!-- SCREENS -->
+<!-- SCREENS / WORKFLOW -->
 <hr class="divider">
 <section class="s" id="screens">
     <div class="s-inner">
-        <div class="s-label reveal">See it in action</div>
-        <h2 class="s-title reveal">Real screens. Real workflow.</h2>
+        <div class="s-label reveal">The flow</div>
+        <h2 class="s-title reveal">From ring to booked. In three taps.</h2>
+        <p class="s-desc reveal">A call. A form that prefills itself. A WhatsApp that lands in their pocket. The whole thing happens before the call ends.</p>
         <div class="screens-grid reveal">
             <figure class="screen">
-                <img src="/images/screen-home.png" alt="Upcoming appointments list with on-my-way buttons" loading="lazy" width="320" height="650">
-                <figcaption>Today's jobs at a glance</figcaption>
+                <div class="step-num">1</div>
+                <img src="/images/screen-popup-basic.png" alt="Call popup with WhatsApp, Schedule, Speaker and Call Later buttons over an active call" loading="lazy" width="320" height="650">
+                <figcaption>Phone rings. Popup is already there.</figcaption>
             </figure>
             <figure class="screen">
-                <img src="/images/screen-calendar.png" alt="Week calendar view with three appointments" loading="lazy" width="320" height="650">
-                <figcaption>Week view with free slots</figcaption>
+                <div class="step-num">2</div>
+                <img src="/images/screen-appointment.png" alt="Appointment form prefilled with customer name, phone, date, time, address and service type" loading="lazy" width="320" height="650">
+                <figcaption>Tap Schedule. Details prefill. Save.</figcaption>
             </figure>
             <figure class="screen">
-                <img src="/images/screen-whatsapp.png" alt="WhatsApp chat with a Swipcall calendar link preview" loading="lazy" width="320" height="650">
-                <figcaption>Customers add it to their calendar in one tap</figcaption>
-            </figure>
-            <figure class="screen">
-                <img src="/images/screen-analytics.png" alt="Analytics dashboard: response rate, missed calls, calls per week" loading="lazy" width="320" height="650">
-                <figcaption>See what's actually working</figcaption>
+                <div class="step-num">3</div>
+                <img src="/images/screen-whatsapp.png" alt="WhatsApp message to the customer with appointment summary and a Powered-by-Swipcall add-to-calendar link" loading="lazy" width="320" height="650">
+                <figcaption>Customer gets a WhatsApp with a one-tap calendar link.</figcaption>
             </figure>
         </div>
     </div>
