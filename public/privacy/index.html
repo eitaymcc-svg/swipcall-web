@@ -36,12 +36,12 @@
     <div class="wrap">
         <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Privacy Policy</h1>
-        <p class="date">Last updated: April 29, 2026</p>
+        <p class="date">Last updated: May 10, 2026</p>
 
         <p><strong>Two commitments before we get into the detail:</strong></p>
         <ul>
             <li><strong>Your data stays on your device.</strong> Your customer list, call history, and calendar live in a local SQLite database on your phone. We do not run a server that holds your customer data.</li>
-            <li><strong>No data selling. Ever.</strong> We do not sell your data, share it with advertising networks, or work with data brokers. Swipcall is funded by Pro subscriptions, not by your data.</li>
+            <li><strong>No data selling. Ever.</strong> We do not sell your data or work with data brokers. We use AppsFlyer to measure the effectiveness of our own advertising campaigns (with your consent) - this is industry-standard mobile attribution and is fully described in Section 3.2 below. We do not engage in cross-app tracking, behavioral ad targeting, or sharing your data with advertisers for their own purposes. Swipcall is funded by Pro subscriptions, not by your data.</li>
         </ul>
 
         <h2>1. Introduction</h2>
@@ -104,6 +104,11 @@
                 <td>Anonymous crash reports (with personal information scrubbed before transmission)</td>
                 <td>Sentry (Functional Software, Inc.)</td>
                 <td>Identifying and fixing bugs that cause the app to crash</td>
+            </tr>
+            <tr>
+                <td>Approximate location (derived from IP address - city/country level only), device identifiers, in-app events, install attribution data</td>
+                <td>AppsFlyer</td>
+                <td>Mobile marketing attribution, measuring the effectiveness of advertising campaigns, and detecting installation fraud. AppsFlyer forwards aggregated event data to advertising platforms (e.g., Meta, Google Ads) to enable campaign optimization. No personally identifiable information is shared with advertising platforms.</td>
             </tr>
         </table>
 
@@ -175,6 +180,11 @@
                 <td>Art. 6(1)(a) - Consent</td>
                 <td>You choose to enable this feature. You can disconnect at any time.</td>
             </tr>
+            <tr>
+                <td>AppsFlyer (marketing attribution)</td>
+                <td>Art. 6(1)(a) - Consent</td>
+                <td>AppsFlyer is only initialized after you opt in within the app. You can withdraw consent at any time by disabling analytics in the app settings. Data transmitted is limited to anonymous device identifiers, approximate location (city-level), and app event metadata.</td>
+            </tr>
         </table>
 
         <h2>5. Android permissions</h2>
@@ -233,12 +243,19 @@
                 <td>Payment and subscription data</td>
                 <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
             </tr>
+            <tr>
+                <td>AppsFlyer Ltd.</td>
+                <td>Sub-processor</td>
+                <td>Approximate location, device identifiers, in-app events, install attribution</td>
+                <td><a href="https://www.appsflyer.com/legal/services-privacy-policy/" target="_blank" rel="noopener">AppsFlyer Privacy Policy</a></td>
+            </tr>
         </table>
 
-        <p>We do not sell, rent, or share your personal data with any other third parties. We do not use advertising networks or tracking services.</p>
+        <p>We do not sell, rent, or share your personal data with third parties beyond the processors listed above. We use AppsFlyer for marketing attribution (measuring the effectiveness of our own advertising campaigns, with your consent). We do not engage in cross-app behavioral tracking, behavioral ad targeting, or sharing your data with advertisers for their own purposes.</p>
 
         <h2>7. International data transfers</h2>
         <p>Swipcall is operated from Israel, which has an <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en" target="_blank" rel="noopener">adequacy decision</a> from the European Commission, meaning the Commission recognizes Israel as providing an adequate level of data protection.</p>
+        <p>AppsFlyer Ltd. is headquartered in Israel and benefits from the same EU adequacy decision. AppsFlyer also has operational data centers in the United States, which are protected by the same safeguards (EU-US Data Privacy Framework certification and Standard Contractual Clauses) as the other US-based processors listed above.</p>
         <p>Some third-party processors listed above (Google LLC, RevenueCat Inc., and Functional Software, Inc. / Sentry) are based in the United States. Data transferred to these US-based processors is protected by the following safeguards:</p>
         <ul>
             <li><strong>EU-US Data Privacy Framework</strong> - Google and RevenueCat are certified under the EU-US Data Privacy Framework, which the European Commission has recognized as providing adequate protection for transfers to certified US organizations.</li>
@@ -289,6 +306,11 @@
                 <td>Subscription duration plus up to 7 years as required by Israeli tax law</td>
                 <td>Contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> to request deletion after subscription ends and the tax retention period has elapsed</td>
             </tr>
+            <tr>
+                <td>AppsFlyer attribution and event data</td>
+                <td>Up to 90 days for raw event data, longer for aggregated reports per AppsFlyer's data retention policy</td>
+                <td>Contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> to request earlier deletion</td>
+            </tr>
         </table>
 
         <h2>9. Your rights under the GDPR</h2>
@@ -317,6 +339,7 @@
             <li><strong>Firebase Analytics</strong> - Disable analytics in the app settings. Analytics data collection will stop immediately.</li>
             <li><strong>Google Drive backup</strong> - Disable backup in the app settings. You can also revoke Swipcall's access to Google Drive in your Google account settings.</li>
             <li><strong>Google Calendar sync</strong> - Disconnect calendar sync in the app settings. You can also revoke Swipcall's access to Google Calendar in your Google account settings.</li>
+            <li><strong>AppsFlyer marketing attribution</strong> - Disable analytics in the app settings. AppsFlyer SDK will stop transmitting data immediately. Note that disabling analytics will also stop Firebase Analytics (both share the same consent flag).</li>
         </ul>
 
         <h2>11. Right to lodge a complaint</h2>
