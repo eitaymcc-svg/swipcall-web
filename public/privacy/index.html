@@ -36,7 +36,7 @@
     <div class="wrap">
         <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Privacy Policy</h1>
-        <p class="date">Last updated: May 11, 2026</p>
+        <p class="date">Last updated: July 26, 2026</p>
 
         <p><strong>Two commitments before we get into the detail:</strong></p>
         <ul>
@@ -70,6 +70,7 @@
             <li><strong>App settings and preferences</strong> - your configuration choices.</li>
         </ul>
         <p>This data is stored in a local SQLite database on your Android device. Swipcall has no server that receives this data. We cannot access, read, or recover it.</p>
+        <p><strong>One exception, and only when you start it:</strong> if you send us a bug report from inside the app, the report carries a small amount of information off your device. It never contains customer records, phone numbers, call details, or message content - only counts and system settings. Section 3.4 lists exactly what is in it.</p>
 
         <p><strong>Voice notes (removed feature):</strong> Earlier versions of Swipcall included a voice notes feature, which has been removed. If you upgrade from a version that had it, any leftover voice notes on your device are deleted on first launch via a database migration. Voice notes were never sent to or stored by us.</p>
 
@@ -82,8 +83,8 @@
             </tr>
             <tr>
                 <td>Email address, display name</td>
-                <td>Google Sign-In</td>
-                <td>Authentication (creating and signing into your account)</td>
+                <td>Google Sign-In (optional)</td>
+                <td>Only if you choose to sign in. Swipcall does not require an account: sign-in is offered at the moment you connect Google Calendar sync or Google Drive backup, and nothing else depends on it.</td>
             </tr>
             <tr>
                 <td>Anonymous crash reports (stack traces, device model, OS version - no personal data)</td>
@@ -99,6 +100,11 @@
                 <td>Email address, display name, occupation, user ID, purchase receipts</td>
                 <td>RevenueCat</td>
                 <td>Managing subscriptions, verifying purchases, and understanding our user base to improve the service</td>
+            </tr>
+            <tr>
+                <td>Bug reports you choose to send: your description, device and build details, counts (not content), recent app error messages, and the diagnostic report - see Section 3.4</td>
+                <td>Google Apps Script and Google Sheets</td>
+                <td>Receiving and triaging support requests you send us</td>
             </tr>
             <tr>
                 <td>Approximate location (derived from IP address - city/country level only), device identifiers, in-app events, install attribution data</td>
@@ -126,6 +132,18 @@
             </tr>
         </table>
 
+        <h3>3.4 Bug reports and the diagnostic report (only when you send one)</h3>
+        <p>The app has a bug report form and a Health Check screen. Nothing here happens on its own: a report is only ever built and sent when you tap send. When you do, the report is transmitted to a Google Sheet of ours through a Google Apps Script endpoint, and it contains:</p>
+        <ul>
+            <li><strong>The description you type.</strong> Whatever you write in the form. Please do not paste a customer's details into it.</li>
+            <li><strong>Device and build</strong> - manufacturer, model, Android version, Swipcall version, and your interface language.</li>
+            <li><strong>Your plan</strong> - Free, trial, or Pro.</li>
+            <li><strong>Counts, not content</strong> - how many customers you have, how many calls you had today, and how many calls are sitting unhandled. These are numbers only. No name, number, or note is included.</li>
+            <li><strong>Recent app error messages</strong> - the app's own internal error log, which records technical failures, not your data.</li>
+            <li><strong>A diagnostic report of system settings</strong> - which of the permissions in Section 5 are granted, whether battery optimization is exempt, whether call detection is running, plus four app settings: whether active hours are on, which messaging channels are enabled, your theme, and your analytics choice. A guard in the code restricts this report to system settings only, so no customer data can enter it.</li>
+        </ul>
+        <p>The same diagnostic report can also be shared by you directly from the Health Check screen, for example into a support chat. That is your action and your choice of recipient.</p>
+
         <h2>4. Purposes and legal basis for processing</h2>
         <p>Under Article 6 of the GDPR, every type of data processing must have a legal basis. Here is the legal basis for each processing activity in Swipcall:</p>
 
@@ -141,9 +159,9 @@
                 <td>This processing is necessary to provide the core service you downloaded the app to use (caller identification and customer management).</td>
             </tr>
             <tr>
-                <td>Google Sign-In (email, name)</td>
-                <td>Art. 6(1)(b) - Performance of a contract</td>
-                <td>Authentication is necessary to provide the service and manage your account.</td>
+                <td>Google Sign-In (email, name) - optional</td>
+                <td>Art. 6(1)(a) - Consent</td>
+                <td>Signing in is not required to use Swipcall. You choose to sign in when you want Google Calendar sync or Google Drive backup, and you can sign out at any time.</td>
             </tr>
             <tr>
                 <td>Firebase Crashlytics (anonymous crash reports)</td>
@@ -171,6 +189,11 @@
                 <td>You choose to enable this feature. You can disconnect at any time.</td>
             </tr>
             <tr>
+                <td>Bug reports and the diagnostic report</td>
+                <td>Art. 6(1)(b) - Performance of a contract</td>
+                <td>Processing your report is how we provide you with support, which is part of the service. A report is only ever created and sent when you choose to send it.</td>
+            </tr>
+            <tr>
                 <td>AppsFlyer (marketing attribution)</td>
                 <td>Art. 6(1)(a) - Consent</td>
                 <td>AppsFlyer is only initialized after you opt in within the app. You can withdraw consent at any time by disabling analytics in the app settings. Data transmitted is limited to anonymous device identifiers, approximate location (city-level), and app event metadata.</td>
@@ -178,14 +201,65 @@
         </table>
 
         <h2>5. Android permissions</h2>
-        <p>Swipcall requests the following Android permissions. Each is required for a specific feature:</p>
+        <p>Swipcall never asks for permissions up front. Each one is requested at the moment the feature that needs it is used, with a one-line explanation of why. Below is the complete list declared by the app.</p>
+
+        <h3>5.1 Permissions you grant, and can revoke</h3>
+        <table>
+            <tr>
+                <th>Permission</th>
+                <th>What it is for</th>
+            </tr>
+            <tr>
+                <td>READ_PHONE_STATE</td>
+                <td>To detect that a call started and ended, which is what triggers the post-call popup.</td>
+            </tr>
+            <tr>
+                <td>READ_CALL_LOG</td>
+                <td>To read the number, time, and duration of the call that just ended, so the popup can show who it was. Processed entirely on your device.</td>
+            </tr>
+            <tr>
+                <td>SYSTEM_ALERT_WINDOW</td>
+                <td>To display the floating popup on top of other apps after a call.</td>
+            </tr>
+            <tr>
+                <td>READ_CONTACTS</td>
+                <td>To match an incoming number with a contact name saved on your device, and to let you pick a colleague from your contacts. Contact data is read locally and is never transmitted to us.</td>
+            </tr>
+            <tr>
+                <td>POST_NOTIFICATIONS (Android 13 and above)</td>
+                <td>To deliver appointment and callback reminders.</td>
+            </tr>
+            <tr>
+                <td>SCHEDULE_EXACT_ALARM (Android 12 and above)</td>
+                <td>To fire the hour-before appointment reminder at the exact minute rather than whenever the system decides.</td>
+            </tr>
+            <tr>
+                <td>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</td>
+                <td>To ask you to exempt Swipcall from battery optimization, without which Android stops the call detection in the background and the popup silently stops appearing.</td>
+            </tr>
+        </table>
+        <p>You can revoke any of these at any time through your Android device settings. Revoking one disables the feature that depends on it; the rest of the app keeps working. The Health Check screen inside the app shows you which of these are currently missing and what each one costs you.</p>
+
+        <h3>5.2 Permissions granted automatically at install</h3>
+        <p>These are Android "normal" permissions. The system grants them without asking, they expose no personal data, and there is no device setting to toggle them:</p>
         <ul>
-            <li><strong>READ_PHONE_STATE / READ_CALL_LOG</strong> - To detect when calls start and end and to show caller information in the popup overlay. This data is processed entirely on your device.</li>
-            <li><strong>SYSTEM_ALERT_WINDOW</strong> - To display the floating popup overlay on top of other apps during calls.</li>
-            <li><strong>READ_CONTACTS</strong> - To match incoming phone numbers with contact names stored on your device. Contact data is read locally and never transmitted.</li>
-            <li><strong>POST_NOTIFICATIONS</strong> - To send you callback reminders and service notifications.</li>
+            <li><strong>INTERNET</strong> - subscription checks, Google Calendar and Drive when you use them, and sending a bug report.</li>
+            <li><strong>com.android.vending.BILLING</strong> - Google Play subscription purchases.</li>
+            <li><strong>FOREGROUND_SERVICE</strong> and <strong>FOREGROUND_SERVICE_SPECIAL_USE</strong> - to keep call detection alive while you are on a call.</li>
+            <li><strong>WAKE_LOCK</strong> - to finish handling a call end before the device sleeps.</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED</strong> - to re-arm call detection after you restart the phone.</li>
+            <li><strong>MODIFY_AUDIO_SETTINGS</strong> - the speaker toggle in the call popup.</li>
         </ul>
-        <p>You can revoke any permission at any time through your Android device settings. Revoking a permission will disable the feature that depends on it, but the rest of the app will continue to work.</p>
+
+        <h3>5.3 Permissions we deliberately removed</h3>
+        <p>Some third-party libraries we depend on try to add permissions of their own. We strip the following from the app before it is built, so they do not appear in the app's declared permissions on Google Play:</p>
+        <ul>
+            <li><strong>Advertising ID</strong> (AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION) - added by Firebase's measurement libraries. Swipcall does not read your advertising ID and does not serve ads.</li>
+            <li><strong>External storage</strong> (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE) - Swipcall only writes inside its own private app storage.</li>
+            <li><strong>Samsung and Huawei app-store lookups</strong> - added by the AppsFlyer library for other app stores. Swipcall ships only through Google Play.</li>
+            <li><strong>ACCESS_WIFI_STATE</strong> - added by the network-status library. Swipcall only needs to know whether you are online, not which network you are on.</li>
+        </ul>
+        <p>Swipcall does not request location, camera, or microphone permissions at all.</p>
 
         <h2>6. Third-party data processors</h2>
         <p>The following third parties process data on our behalf or as part of the services you use through Swipcall:</p>
@@ -225,6 +299,12 @@
                 <td>Google LLC (Google Play)</td>
                 <td>Processor</td>
                 <td>Payment and subscription data</td>
+                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+            </tr>
+            <tr>
+                <td>Google LLC (Apps Script, Google Sheets)</td>
+                <td>Sub-processor</td>
+                <td>Bug reports you choose to send: your description, device and build details, counts, recent app error messages, and the diagnostic report (Section 3.4)</td>
                 <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
             </tr>
             <tr>
@@ -286,6 +366,11 @@
                 <td>Contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> to request deletion after subscription ends and the tax retention period has elapsed</td>
             </tr>
             <tr>
+                <td>Bug reports you sent us</td>
+                <td>Kept for up to 24 months in our support sheet, then deleted</td>
+                <td>Email <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> and we will delete your reports on request</td>
+            </tr>
+            <tr>
                 <td>AppsFlyer attribution and event data</td>
                 <td>Up to 90 days for raw event data, longer for aggregated reports per AppsFlyer's data retention policy</td>
                 <td>Contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> to request earlier deletion</td>
@@ -312,9 +397,10 @@
         <p>For data held by third-party processors (Firebase, RevenueCat, Google), email us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> with the subject line "GDPR Data Request". Please include your email address so we can identify your account. We will respond within 30 days. There is no fee for exercising your rights. If your request is complex or you make multiple requests, we may extend the response period by up to 60 additional days and will inform you of the extension.</p>
 
         <h2>10. Right to withdraw consent</h2>
-        <p>Where we rely on your consent as the legal basis for processing (Firebase Analytics, Google Drive backup, and Google Calendar sync), you have the right to withdraw that consent at any time. Withdrawing consent does not affect the lawfulness of any processing we carried out before you withdrew it.</p>
+        <p>Where we rely on your consent as the legal basis for processing (Google Sign-In, Firebase Analytics, Google Drive backup, and Google Calendar sync), you have the right to withdraw that consent at any time. Withdrawing consent does not affect the lawfulness of any processing we carried out before you withdrew it.</p>
         <p>To withdraw consent:</p>
         <ul>
+            <li><strong>Google Sign-In</strong> - Sign out from the account card in the app settings. The local copy of your email and name is removed and the app keeps working exactly as before, minus the two features that need an account.</li>
             <li><strong>Firebase Analytics</strong> - Disable analytics in the app settings. Analytics data collection will stop immediately.</li>
             <li><strong>Google Drive backup</strong> - Disable backup in the app settings. You can also revoke Swipcall's access to Google Drive in your Google account settings.</li>
             <li><strong>Google Calendar sync</strong> - Disconnect calendar sync in the app settings. You can also revoke Swipcall's access to Google Calendar in your Google account settings.</li>
@@ -330,7 +416,7 @@
         <h2>12. Obligation to provide data</h2>
         <p>Providing your data to Swipcall is not a statutory or contractual requirement. However:</p>
         <ul>
-            <li><strong>Google Sign-In (email, name)</strong> is required to create an account and use the app. If you choose not to sign in, you cannot use Swipcall.</li>
+            <li><strong>Google Sign-In (email, name)</strong> is entirely optional. Swipcall is fully usable with no Google account, permanently, and there is no registration step. Sign-in is offered only at the moment you choose to connect Google Calendar sync or Google Drive backup.</li>
             <li><strong>Android permissions</strong> (call log, contacts, etc.) are needed for specific features. Denying them will disable those features but will not prevent you from using the rest of the app.</li>
             <li><strong>Pro features</strong> (backup, calendar sync) are entirely optional. There are no consequences for choosing not to use them.</li>
         </ul>
@@ -341,22 +427,28 @@
         <h2>14. WhatsApp integration</h2>
         <p>When you tap "Send WhatsApp" in the app, Swipcall opens the WhatsApp application using a standard Android intent (deep link) with the customer's phone number. This is a direct device-to-app communication. No data passes through any Swipcall server. The phone number is sent directly from your device to WhatsApp on your device. WhatsApp's own privacy policy governs how WhatsApp handles that data.</p>
 
-        <h2>15. Website and cookies</h2>
-        <p>The Swipcall website (this site) uses only essential local storage (localStorage) to remember basic preferences such as your language selection and accessibility widget settings (font size, contrast, and display preferences). We do not use tracking cookies, advertising cookies, or any third-party cookies. A localStorage notice banner is displayed to inform you about this storage. localStorage does not track you across sites.</p>
+        <h2>15. Sending a lead to a colleague</h2>
+        <p>Swipcall lets you hand a job you cannot take to another tradesperson. When you do, the app composes a message for you - in WhatsApp, SMS, or whichever channel you use - containing the customer's name, phone number, job description, and address, plus a <code>swipcall.com/r</code> link. You send that message yourself, from your own account, to the colleague you picked.</p>
+        <p>The customer's details ride inside that link, after the <code>#</code> sign. That part of a web address is a fragment: browsers and link-preview services never send it to any server. The details are <strong>encoded</strong>, not encrypted - anyone holding the link can read them, exactly as anyone holding the message can read the same details written in its text.</p>
+        <p>The important consequence: <strong>no Swipcall server ever receives the lead.</strong> There is no server in this path at all. The handoff is device to device, inside your own private conversation, and it is governed by the privacy policy of whichever messaging app you send it through.</p>
+        <p>When your colleague opens the link, their copy of Swipcall reads the details out of the link on their own device and saves them as a customer record there. From that point the colleague is responsible for those details, as the controller of their own customer list. If your colleague does not have Swipcall, the link simply opens the Google Play listing, and the details stay only in the message text you sent.</p>
 
-        <h2>16. Children's privacy</h2>
+        <h2>16. Website and cookies</h2>
+        <p>The Swipcall website (this site) uses only essential local storage (localStorage) to remember your accessibility widget settings (font size, line height, letter spacing, contrast, grayscale, link highlighting, readable font, cursor size, and paused animations) and your choice on the storage notice itself. We do not use tracking cookies, advertising cookies, or any third-party cookies. A localStorage notice banner is displayed to inform you about this storage. localStorage does not track you across sites.</p>
+
+        <h2>17. Children's privacy</h2>
         <p>Swipcall is a business tool designed for professionals. It is not intended for use by anyone under the age of 16. We do not knowingly collect personal data from children under 16. If you believe that a child under 16 has provided us with personal data, please contact us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> and we will take steps to delete that data.</p>
 
-        <h2>17. Data security</h2>
+        <h2>18. Data security</h2>
         <p>We take the following measures to protect your data:</p>
         <ul>
             <li><strong>Local-first architecture</strong> - Your data stays on your device and is protected by your device's own security (screen lock, encryption).</li>
             <li><strong>Encrypted backups</strong> - Google Drive backups are encrypted with AES-256-GCM before they leave your device. Swipcall does not have access to the encryption key.</li>
-            <li><strong>Minimal data collection</strong> - We only transmit anonymous crash and usage data to third-party services. No customer data, phone numbers, call details, or business information is ever transmitted.</li>
+            <li><strong>Minimal data collection</strong> - What leaves your device on its own is limited to anonymous crash and usage data. Your customer records, phone numbers, call details, and message content are never transmitted - not by the app on its own, and not in a bug report you send (Section 3.4 lists what a report does contain).</li>
             <li><strong>HTTPS</strong> - All network communication uses HTTPS encryption.</li>
         </ul>
 
-        <h2>18. Israeli Privacy Protection Law</h2>
+        <h2>19. Israeli Privacy Protection Law</h2>
         <p>Swipcall is operated from Israel and is subject to the Israeli Protection of Privacy Law, 5741-1981. In addition to the GDPR rights described above, all users have the following rights under Israeli law:</p>
         <ul>
             <li><strong>Right of access (Section 13)</strong> - You have the right to review any personal data about you held by us or our third-party processors.</li>
@@ -367,7 +459,7 @@
         <p>If you believe your privacy rights under Israeli law have been violated, you may lodge a complaint with the <a href="https://www.gov.il/he/departments/the_privacy_protection_authority" target="_blank" rel="noopener">Israeli Privacy Protection Authority (PPA)</a>.</p>
         <p>Under the Israeli Protection of Privacy Law, database registration with the Registrar of Databases is required when a database contains personal data of more than 10,000 individuals. Swipcall will complete this registration if and when this threshold is reached.</p>
 
-        <h2>19. Changes to this privacy policy</h2>
+        <h2>20. Changes to this privacy policy</h2>
 
         <p>We may update this privacy policy from time to time to reflect changes in the app, the law, or our practices. When we make changes:</p>
         <ul>
@@ -377,7 +469,7 @@
         </ul>
         <p>We encourage you to review this page periodically.</p>
 
-        <h2>20. Contact us</h2>
+        <h2>21. Contact us</h2>
         <p>If you have questions about this privacy policy, want to exercise your data rights, or have a concern about how your data is handled, please contact us:</p>
         <p>
             Email: <a href="mailto:admin@swipcall.com">admin@swipcall.com</a><br>
