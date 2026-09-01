@@ -36,12 +36,12 @@
     <div class="wrap">
         <a href="/" class="back">&larr; Back to Swipcall</a>
         <h1>Privacy Policy</h1>
-        <p class="date">Last updated: July 26, 2026</p>
+        <p class="date">Last updated: September 1, 2026</p>
 
         <p><strong>Two commitments before we get into the detail:</strong></p>
         <ul>
             <li><strong>Your data stays on your device.</strong> Your customer list, call history, and calendar live in a local SQLite database on your phone. We do not run a server that holds your customer data.</li>
-            <li><strong>No data selling. Ever.</strong> We do not sell your data or work with data brokers. We use AppsFlyer to measure the effectiveness of our own advertising campaigns (with your consent) - this is industry-standard mobile attribution and is fully described in Section 3.2 below. We do not engage in cross-app tracking, behavioral ad targeting, or sharing your data with advertisers for their own purposes. Swipcall is funded by Pro subscriptions, not by your data.</li>
+            <li><strong>No data selling. Ever.</strong> We do not sell your data or work with data brokers. We use AppsFlyer to measure the effectiveness of our own advertising campaigns (with your consent where the law requires asking first, and always with an off switch in Settings &gt; Privacy) - this is industry-standard mobile attribution and is fully described in Section 3.2 below. We do not engage in cross-app tracking, behavioral ad targeting, or sharing your data with advertisers for their own purposes. Swipcall is funded by Pro subscriptions, not by your data.</li>
         </ul>
 
         <h2>1. Introduction</h2>
@@ -107,7 +107,7 @@
                 <td>Receiving and triaging support requests you send us</td>
             </tr>
             <tr>
-                <td>Approximate location (derived from IP address - city/country level only), device identifiers, in-app events, install attribution data</td>
+                <td>Approximate location (derived from IP address - city/country level only), device identifiers including the Google advertising ID, in-app events, install attribution data</td>
                 <td>AppsFlyer</td>
                 <td>Mobile marketing attribution, measuring the effectiveness of advertising campaigns, and detecting installation fraud. AppsFlyer forwards aggregated event data to advertising platforms (e.g., Meta, Google Ads) to enable campaign optimization. No personally identifiable information is shared with advertising platforms.</td>
             </tr>
@@ -170,8 +170,8 @@
             </tr>
             <tr>
                 <td>Firebase Analytics (anonymous usage counts)</td>
-                <td>Art. 6(1)(a) - Consent</td>
-                <td>Firebase Analytics is only initialized after you opt in within the app settings. You can withdraw consent at any time by disabling analytics in the app settings.</td>
+                <td>Art. 6(1)(a) - Consent, or Art. 6(1)(f) - Legitimate interest, by region.</td>
+                <td>If you are in a region whose law requires an up-front opt-in (the EEA, the United Kingdom, Switzerland, Brazil, Canada), collection starts only after you agree in the app. Elsewhere, anonymous measurement is enabled by default when you install the app, and you can switch it off at any time in Settings &gt; Privacy.</td>
             </tr>
             <tr>
                 <td>RevenueCat (subscription management)</td>
@@ -195,8 +195,8 @@
             </tr>
             <tr>
                 <td>AppsFlyer (marketing attribution)</td>
-                <td>Art. 6(1)(a) - Consent</td>
-                <td>AppsFlyer is only initialized after you opt in within the app. You can withdraw consent at any time by disabling analytics in the app settings. Data transmitted is limited to anonymous device identifiers, approximate location (city-level), and app event metadata.</td>
+                <td>Art. 6(1)(a) - Consent, or Art. 6(1)(f) - Legitimate interest, by region.</td>
+                <td>If you are in a region whose law requires an up-front opt-in (the EEA, the United Kingdom, Switzerland, Brazil, Canada), collection starts only after you agree in the app. Elsewhere, anonymous measurement is enabled by default when you install the app, and you can switch it off at any time in Settings &gt; Privacy.</td>
             </tr>
         </table>
 
@@ -251,12 +251,13 @@
             <li><strong>MODIFY_AUDIO_SETTINGS</strong> - the speaker toggle in the call popup.</li>
             <li><strong>ACCESS_NETWORK_STATE</strong> - to know whether the device is online before a subscription check, sync, or bug report is attempted. Only online/offline status is read, not which network you are on.</li>
             <li><strong>Google Play install-referrer service</strong> (com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE) - lets the app ask Google Play which campaign or referral link led to the install. Used only for the consent-gated attribution described in Section 3.2.</li>
+            <li><strong>Advertising ID</strong> (AD_ID, and on Android 13+ ACCESS_ADSERVICES_AD_ID) - lets AppsFlyer attribute app installs to the advertising campaign that led to them, so we can measure our own ads. Controlled by the analytics switch in Settings &gt; Privacy; you can also reset or delete the advertising ID in your Android settings. Swipcall does not serve ads.</li>
         </ul>
 
         <h3>5.3 Permissions we deliberately removed</h3>
         <p>Some third-party libraries we depend on try to add permissions of their own. We strip the following from the app before it is built, so they do not appear in the app's declared permissions on Google Play:</p>
         <ul>
-            <li><strong>Advertising ID</strong> (AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION) - added by Firebase's measurement libraries. Swipcall does not read your advertising ID and does not serve ads.</li>
+            <li><strong>Ad-services attribution</strong> (ACCESS_ADSERVICES_ATTRIBUTION) - added by measurement libraries and stripped: Swipcall does not use the Android attribution reporting APIs. The advertising ID itself is used for campaign measurement - see Section 5.2.</li>
             <li><strong>External storage</strong> (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE) - Swipcall only writes inside its own private app storage.</li>
             <li><strong>Samsung and Huawei app-store lookups</strong> - added by the AppsFlyer library for other app stores. Swipcall ships only through Google Play.</li>
             <li><strong>ACCESS_WIFI_STATE</strong> - added by the network-status library. Swipcall only needs to know whether you are online, not which network you are on.</li>
@@ -403,10 +404,10 @@
         <p>To withdraw consent:</p>
         <ul>
             <li><strong>Google Sign-In</strong> - Sign out from the account card in the app settings. The local copy of your email and name is removed and the app keeps working exactly as before, minus the two features that need an account.</li>
-            <li><strong>Firebase Analytics</strong> - Disable analytics in the app settings. Analytics data collection will stop immediately.</li>
+            <li><strong>Firebase Analytics</strong> - Disable analytics in the app settings. Analytics data collection will stop immediately. In regions where collection is enabled by default, the same switch turns it off (an opt-out with the same immediate effect).</li>
             <li><strong>Google Drive backup</strong> - Disable backup in the app settings. You can also revoke Swipcall's access to Google Drive in your Google account settings.</li>
             <li><strong>Google Calendar sync</strong> - Disconnect calendar sync in the app settings. You can also revoke Swipcall's access to Google Calendar in your Google account settings.</li>
-            <li><strong>AppsFlyer marketing attribution</strong> - Disable analytics in the app settings. AppsFlyer SDK will stop transmitting data immediately. Note that disabling analytics will also stop Firebase Analytics (both share the same consent flag).</li>
+            <li><strong>AppsFlyer marketing attribution</strong> - Disable analytics in the app settings. AppsFlyer SDK will stop transmitting data immediately. Note that disabling analytics will also stop Firebase Analytics (both share the same consent flag). In regions where collection is enabled by default, the same switch turns it off (an opt-out with the same immediate effect).</li>
         </ul>
 
         <h2>11. Right to lodge a complaint</h2>
