@@ -121,7 +121,7 @@
                 <th>Purpose</th>
             </tr>
             <tr>
-                <td>Encrypted backup file (AES-256-GCM encrypted copy of your local database)</td>
+                <td>Encrypted backup file (an AES-256 encrypted copy of your local database, using CBC mode with a separate HMAC-SHA256 integrity key)</td>
                 <td>Google Drive (your personal account)</td>
                 <td>Backup and restore, initiated by you</td>
             </tr>
@@ -249,6 +249,8 @@
             <li><strong>WAKE_LOCK</strong> - to finish handling a call end before the device sleeps.</li>
             <li><strong>RECEIVE_BOOT_COMPLETED</strong> - to re-arm call detection after you restart the phone.</li>
             <li><strong>MODIFY_AUDIO_SETTINGS</strong> - the speaker toggle in the call popup.</li>
+            <li><strong>ACCESS_NETWORK_STATE</strong> - to know whether the device is online before a subscription check, sync, or bug report is attempted. Only online/offline status is read, not which network you are on.</li>
+            <li><strong>Google Play install-referrer service</strong> (com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE) - lets the app ask Google Play which campaign or referral link led to the install. Used only for the consent-gated attribution described in Section 3.2.</li>
         </ul>
 
         <h3>5.3 Permissions we deliberately removed</h3>
@@ -338,7 +340,7 @@
             <tr>
                 <td>On-device data (customers, calls, appointments, settings)</td>
                 <td>Kept until you delete it or uninstall the app</td>
-                <td>Use "Delete all data" in Settings, or uninstall the app</td>
+                <td>Use "Delete account" in Settings, or uninstall the app</td>
             </tr>
             <tr>
                 <td>Google Drive backups</td>
@@ -348,7 +350,7 @@
             <tr>
                 <td>Google Sign-In data (email, name)</td>
                 <td>Stored locally on your device; kept by Google as part of your Google account</td>
-                <td>Local copy is deleted when you uninstall the app or use "Delete all data" in Settings. To remove from Google, revoke Swipcall's access in your Google account security settings</td>
+                <td>Local copy is deleted when you uninstall the app or use "Delete account" in Settings. To remove from Google, revoke Swipcall's access in your Google account security settings</td>
             </tr>
             <tr>
                 <td>Firebase Crashlytics data</td>
@@ -384,15 +386,15 @@
             <li><strong>Right to rectification (Art. 16)</strong> - You can ask us to correct any inaccurate data we hold about you.</li>
             <li><strong>Right to erasure (Art. 17)</strong> - You can ask us to delete your personal data. Since most data is on your device, you can delete it directly. For data held by third-party processors, contact us and we will coordinate deletion.</li>
             <li><strong>Right to restriction of processing (Art. 18)</strong> - You can ask us to temporarily stop processing your data while a concern is resolved.</li>
-            <li><strong>Right to data portability (Art. 20)</strong> - You can request your data in a structured, commonly used, machine-readable format. The app's built-in export feature in Settings provides this.</li>
+            <li><strong>Right to data portability (Art. 20)</strong> - You can request your data in a structured, commonly used, machine-readable format. The app provides this per customer record: open a customer and choose "Send customer their data". For a full copy of your database, use the encrypted Google Drive backup, or contact us for an export.</li>
             <li><strong>Right to object (Art. 21)</strong> - You can object to processing based on legitimate interest (Firebase Crashlytics and Analytics). We will stop unless we have compelling legitimate grounds.</li>
         </ul>
 
         <h3>How to exercise your rights</h3>
         <p>For data stored on your device, you can exercise your rights directly through the app:</p>
         <ul>
-            <li><strong>Access and portability</strong> - Use the data export feature in Settings.</li>
-            <li><strong>Erasure</strong> - Use "Delete all data" in Settings, or uninstall the app.</li>
+            <li><strong>Access and portability</strong> - Open a customer record and choose "Send customer their data" for that customer's data, or use the encrypted Google Drive backup for a full copy.</li>
+            <li><strong>Erasure</strong> - Use "Delete account" in Settings, or uninstall the app.</li>
         </ul>
         <p>For data held by third-party processors (Firebase, RevenueCat, Google), email us at <a href="mailto:admin@swipcall.com">admin@swipcall.com</a> with the subject line "GDPR Data Request". Please include your email address so we can identify your account. We will respond within 30 days. There is no fee for exercising your rights. If your request is complex or you make multiple requests, we may extend the response period by up to 60 additional days and will inform you of the extension.</p>
 
@@ -443,7 +445,7 @@
         <p>We take the following measures to protect your data:</p>
         <ul>
             <li><strong>Local-first architecture</strong> - Your data stays on your device and is protected by your device's own security (screen lock, encryption).</li>
-            <li><strong>Encrypted backups</strong> - Google Drive backups are encrypted with AES-256-GCM before they leave your device. Swipcall does not have access to the encryption key.</li>
+            <li><strong>Encrypted backups</strong> - Google Drive backups are encrypted with AES-256 (CBC mode, with a separate HMAC-SHA256 key authenticating every backup - encrypt-then-MAC) before they leave your device. Swipcall does not have access to the encryption keys.</li>
             <li><strong>Minimal data collection</strong> - What leaves your device on its own is limited to anonymous crash and usage data. Your customer records, phone numbers, call details, and message content are never transmitted - not by the app on its own, and not in a bug report you send (Section 3.4 lists what a report does contain).</li>
             <li><strong>HTTPS</strong> - All network communication uses HTTPS encryption.</li>
         </ul>

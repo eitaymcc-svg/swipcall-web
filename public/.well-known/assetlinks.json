@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.swipcall.app",
+      "sha256_cert_fingerprints": [
+        "A9:C8:EF:0F:19:95:88:82:92:4C:EA:05:54:C0:B4:21:F0:5C:D0:F1:52:6E:7A:72:CE:A9:AA:1F:CA:5D:23:29",
+        "FB:9E:A6:6D:33:5F:DE:0F:D1:7E:95:AD:30:33:91:32:07:F4:2A:77:A2:54:4F:D8:2B:B7:B2:49:12:DA:C2:70"
+      ]
+    }
+  }
+]
